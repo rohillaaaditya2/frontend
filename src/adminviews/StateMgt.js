@@ -43,7 +43,7 @@ import "./State.css";
         }
         else
         {
-            axios.get("https://server-app-xite.onrender.com/state/searchbyname/"+stname).then((res)=>{
+            axios.get("https://server-app-xite.onrender.com/state/searchbyname"+stname).then((res)=>{
                 if(res.data.stname!=undefined)
                 {
                     alert("STATE NAME ALREADY EXITS");
@@ -82,7 +82,7 @@ import "./State.css";
        const handleSearchButton=()=>{
           if(stid!=undefined && stid!="")
           {
-            axios.get("https://server-app-xite.onrender.com/state/search/"+stid).then((res)=>{
+            axios.get("https://server-app-xite.onrender.com/state/search"+stid).then((res)=>{
                 if(res.data.stid!=undefined)
                 {
                     setStId(res.data.stid);
@@ -112,7 +112,7 @@ import "./State.css";
                 stname:stname,
                 status:status
             }
-            axios.put("https://server-app-xite.onrender.com/state/update/",obj).then((res)=>{
+            axios.put("https://server-app-xite.onrender.com/state/update",obj).then((res)=>{
                 alert(res.data);
                 setStId("");
                 setStName("");
@@ -126,7 +126,7 @@ import "./State.css";
        const handleDeleteButton=()=>{
         if(stid!=undefined&&stid!="")
         {
-            axios.delete("https://server-app-xite.onrender.com/state/delete/"+stid).then((res)=>{
+            axios.delete("https://server-app-xite.onrender.com/state/delete"+stid).then((res)=>{
                 alert(res.data);
             }).catch((err)=>{
                 alert(err);
