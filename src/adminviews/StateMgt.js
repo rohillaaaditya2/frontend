@@ -56,7 +56,7 @@ import "./State.css";
                         status:status
                     }
 
-                    axios.post("/https://server-app-xite.onrender.com/state/save",obj).then((res)=>{
+                    axios.post("https://server-app-xite.onrender.com/state/save",obj).then((res)=>{
                         alert(res.data);
                         setStId("");
                         setStName("");
