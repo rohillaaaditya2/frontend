@@ -1,0 +1,160 @@
+/* ===== Overlay ===== */
+.ch-pass-container {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Card ===== */
+.ch-pass-card {
+    background: #ffffff;
+    width: 420px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+/* ===== Header (Amazon style) ===== */
+.ch-pass-header {
+    background: #f0f2f2;
+    border-bottom: 1px solid #d5d9d9;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: #0f1111;
+}
+
+/* Close button */
+.ch-pass-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
+.ch-pass-close:hover {
+    color: #000;
+}
+
+/* ===== Alerts ===== */
+.ch-pass-alert-success {
+    background: #e6f4ea;
+    color: #067d62;
+    padding: 10px 14px;
+    margin: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.ch-pass-alert-error {
+    background: #fdecea;
+    color: #b12704;
+    padding: 10px 14px;
+    margin: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* ===== Form ===== */
+.ch-pass-card form {
+    padding: 16px;
+}
+
+.ch-pass-card label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #0f1111;
+}
+
+/* Input */
+.ch-pass-input,
+.ch-pass-field input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #a6a6a6;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.ch-pass-input:focus,
+.ch-pass-field input:focus {
+    outline: none;
+    border-color: #007185;
+    box-shadow: 0 0 0 3px rgba(0,113,133,0.2);
+}
+
+/* Password field with eye */
+.ch-pass-field {
+    position: relative;
+}
+
+.ch-pass-field span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+}
+
+/* ===== Password Strength ===== */
+.ch-pass-strength-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.ch-pass-bar {
+    height: 6px;
+    width: 60px;
+    border-radius: 4px;
+    background: #ddd;
+}
+
+.level-1 { background: #d13212; }
+.level-2 { background: #f0c14b; }
+.level-3 { background: #2f8f2f; }
+
+/* ===== Button ===== */
+.ch-pass-btn {
+    width: 100%;
+    background: linear-gradient(#f7dfa5, #f0c14b);
+    border: 1px solid #a88734;
+    color: #111;
+    padding: 9px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ch-pass-btn:hover {
+    background: linear-gradient(#f5d78e, #eeb933);
+}
+
+.ch-pass-btn:disabled {
+    background: #e7e9ec;
+    border-color: #adb1b8;
+    cursor: not-allowed;
+}
+
+/* ===== Hint ===== */
+.ch-pass-hint {
+    font-size: 12px;
+    color: #565959;
+    padding: 0 16px 16px;
+    line-height: 1.4;
+}

@@ -1,0 +1,122 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== OVERLAY / PAGE ===== */
+.edit-profile-container {
+  max-width: 420px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 24px 26px;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* ===== HEADER ===== */
+.edit-profile-header {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: #111;
+  text-align: center;
+}
+
+/* ===== INPUTS & SELECT ===== */
+.edit-profile-input,
+.edit-profile-select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.edit-profile-input:focus,
+.edit-profile-select:focus {
+  outline: none;
+  border-color: #f90;
+  box-shadow: 0 0 0 2px rgba(255,153,0,0.3);
+}
+
+/* ===== ERROR TEXT ===== */
+.edit-profile-error {
+  font-size: 12px;
+  color: #c40000;
+  margin-bottom: 8px;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.edit-profile-label {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.edit-profile-img {
+  display: block;
+  margin: 8px auto 10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* ===== FILE INPUT ===== */
+.edit-profile-file {
+  width: 100%;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+/* ===== BUTTONS ===== */
+.edit-profile-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-profile-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== SAVE BUTTON (AMAZON YELLOW) ===== */
+.save-btn {
+  background: linear-gradient(#f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+}
+
+.save-btn:hover {
+  background: linear-gradient(#f5d78e, #eeb933);
+}
+
+/* ===== CANCEL BUTTON ===== */
+.cancel-btn {
+  background: #e7e9ec;
+  border: 1px solid #adb1b8;
+}
+
+.cancel-btn:hover {
+  background: #d5d9d9;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .edit-profile-container {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .edit-profile-header {
+    font-size: 20px;
+  }
+}

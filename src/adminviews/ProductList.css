@@ -1,0 +1,140 @@
+/* ================= PAGE WRAPPER ================= */
+.ProDiv {
+  background: #eaeded; /* Amazon dashboard bg */
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= HEADINGS ================= */
+.ProDiv h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+/* ================= FILTER CONTROLS ================= */
+.ProDiv select {
+  padding: 6px 10px;
+  margin: 6px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.ProDiv select:focus {
+  outline: none;
+  border-color: #ff9900; /* Amazon orange */
+}
+
+/* ================= PRODUCT LIST TITLE ================= */
+.ProDiv p {
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.ProDiv p[style*="background-color"] {
+  background: #131921 !important;
+  color: #fff !important;
+  padding: 8px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* ================= TABLE ================= */
+.borrdrer {
+  width: 95%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.borrdrer th {
+  background: #f3f3f3;
+  padding: 8px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #111;
+}
+
+.borrdrer td {
+  padding: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.borrdrer tr:hover {
+  background: #fafafa;
+}
+
+/* ================= PRODUCT IMAGE ================= */
+.borrdrer img {
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* ================= STATUS ================= */
+.borrdrer td:nth-child(7) {
+  font-weight: bold;
+}
+
+.borrdrer td:nth-child(7):contains("Active") {
+  color: green;
+}
+
+.borrdrer td:nth-child(7):contains("Inactive") {
+  color: red;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.borrdrer button {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 6px;
+}
+
+/* ACTIVE BUTTON */
+.borrdrer button:first-child {
+  background: #ff9900;
+  color: #111;
+  font-weight: bold;
+}
+
+.borrdrer button:first-child:hover {
+  background: #e68a00;
+}
+
+/* INACTIVE BUTTON */
+.borrdrer button:last-child {
+  background: #232f3e;
+  color: #fff;
+}
+
+.borrdrer button:last-child:hover {
+  color: #ff9900;
+  border-color: #ff9900;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .borrdrer {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .borrdrer img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .ProDiv h1 {
+    font-size: 16px;
+  }
+}

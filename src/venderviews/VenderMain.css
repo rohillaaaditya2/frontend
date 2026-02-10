@@ -1,0 +1,54 @@
+/* MAIN WRAPPER */
+.vendermain {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.vender-nav {
+  height: 70px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  color: #00e6e6;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* NAV LINKS */
+.vender-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.vender-nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.vender-nav ul li a:hover {
+  background: #00e6e6;
+  color: #000;
+}
+
+/* CONTENT AREA */
+.vendermainout {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}

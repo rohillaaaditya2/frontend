@@ -1,0 +1,87 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= MAIN WRAPPER ================= */
+.Adminmain {
+  min-height: 100vh;
+  background-color: #eaeded; /* Amazon light gray */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+.adminheader {
+  height: 60px;
+  background-color: #131921; /* Amazon dark navy */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* LOGO / TITLE */
+.admindivv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* ================= NAV ================= */
+.adminnav {
+  display: flex;
+  gap: 20px;
+}
+
+.adminnav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+/* HOVER EFFECT (Amazon Style) */
+.adminnav a:hover {
+  border: 1px solid #ffffff;
+  color: #ff9900; /* Amazon orange */
+}
+
+/* ================= MAIN CONTENT ================= */
+.adminmainn {
+  flex: 1;
+  padding: 20px;
+  background-color: #eaeded;
+}
+
+/* ================= OPTIONAL CARD STYLE ================= */
+.admin-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .admindivv {
+    font-size: 16px;
+  }
+
+  .adminnav {
+    gap: 10px;
+  }
+
+  .adminnav a {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,95 @@
+/* ================= ADMIN LOGIN PAGE ================= */
+.adminlogin-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #020617
+    );
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= LOGIN CARD ================= */
+.adminlogin-form {
+    width: 340px;
+    padding: 28px 26px;
+    background: linear-gradient(
+        180deg,
+        #111827,
+        #020617
+    );
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
+    border: 1px solid #1f2937;
+}
+
+/* ================= TITLE ================= */
+.adminlogin-form h4 {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #f8fafc;
+    letter-spacing: 0.4px;
+}
+
+/* ================= INPUT FIELDS ================= */
+.adminlogin-form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-size: 14px;
+    outline: none;
+}
+
+/* ================= INPUT PLACEHOLDER ================= */
+.adminlogin-form input::placeholder {
+    color: #94a3b8;
+}
+
+/* ================= INPUT FOCUS ================= */
+.adminlogin-form input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
+}
+
+/* ================= LOGIN BUTTON ================= */
+.adminLogin-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(
+        180deg,
+        #38bdf8,
+        #0284c7
+    );
+    color: #020617;
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+/* ================= BUTTON HOVER ================= */
+.adminLogin-button:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.45);
+    transform: translateY(-1px);
+}
+
+/* ================= BUTTON CLICK ================= */
+.adminLogin-button:active {
+    transform: scale(0.97);
+}

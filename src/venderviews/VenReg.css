@@ -1,0 +1,151 @@
+/* Main container */
+.vlg-container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: vlg-page-rotate 2s ease-in-out;
+}
+
+/* Page 360° rotation on start */
+@keyframes vlg-page-rotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Bubbles container */
+.vlg-bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Individual bubbles */
+.vlg-bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 15px;
+    height: 15px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    animation: vlg-bubble-float 8s infinite;
+}
+
+/* Random bubble animation */
+.vlg-bubble:nth-child(odd) {
+    background: rgba(255, 0, 150, 0.6);
+    width: 20px;
+    height: 20px;
+    animation-duration: 10s;
+}
+
+.vlg-bubble:nth-child(even) {
+    background: rgba(0, 255, 255, 0.6);
+    width: 12px;
+    height: 12px;
+    animation-duration: 6s;
+}
+
+@keyframes vlg-bubble-float {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(200px - 100% * var(--i))) translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Form */
+.vlg-form {
+    width: 360px;
+    padding: 30px 25px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+/* Heading */
+.vlg-heading {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #1e3c72;
+    font-weight: 700;
+}
+
+/* Inputs */
+.vlg-input {
+    width: 90%;
+    padding: 12px 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.vlg-input:focus {
+    border-color: #1e3c72;
+    box-shadow: 0 0 12px rgba(30,60,114,0.3);
+}
+
+/* Remember me */
+.vlg-remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Buttons */
+.vlg-btn {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vlg-btn-login {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: #fff;
+}
+
+.vlg-btn-login:hover {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    transform: scale(0.97);
+}
+
+.vlg-btn-forget {
+    background: #555;
+    color: #fff;
+}
+
+.vlg-btn-forget:hover {
+    background: #777;
+    transform: scale(0.97);
+}

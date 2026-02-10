@@ -1,0 +1,74 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== MAIN WRAPPER ===== */
+.CustonerMain {
+  min-height: 100vh;
+  background: #eaecee; /* Amazon light grey */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TOP NAVBAR ===== */
+.CustonerMain nav {
+  background: #131921; /* Amazon dark navy */
+  padding: 12px 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.CustonerMain nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+/* ===== NAV LINKS ===== */
+.CustonerMain nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Hover like Amazon */
+.CustonerMain nav ul li a:hover {
+  border: 1px solid #ffffff;
+}
+
+/* ===== OUTLET AREA ===== */
+.customermAIN-OUTLET {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Card feel for login / register */
+.customermAIN-OUTLET > * {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .CustonerMain nav ul {
+    justify-content: center;
+  }
+
+  .customermAIN-OUTLET {
+    padding: 20px 12px;
+  }
+}

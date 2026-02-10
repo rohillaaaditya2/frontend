@@ -1,0 +1,134 @@
+/* ===== PAGE BACKGROUND ===== */
+.vendContainer_guru {
+  min-height: 100vh;
+  background: #f3f3f3;
+  padding: 40px 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== FORM CARD ===== */
+.vendBox_guru {
+  width: 420px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  text-align: left;
+}
+
+/* ===== HEADING ===== */
+.vendHeading_guru {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+/* ===== STATUS TEXT ===== */
+.vendStatus_guru {
+  text-align: center;
+  color: #c45500;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* ===== ROW ===== */
+.vendRow_guru {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== LABEL ===== */
+.vendLabel_guru {
+  font-size: 13px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+/* ===== READ ONLY FIELD ===== */
+.vendReadonly_guru {
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ===== INPUT ===== */
+.vendInput_guru {
+  padding: 9px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #a6a6a6;
+  outline: none;
+}
+
+.vendInput_guru:focus {
+  border-color: #e77600;
+  box-shadow: 0 0 0 2px rgba(228,121,17,0.2);
+}
+
+/* ===== ERROR TEXT ===== */
+.vendError_guru {
+  font-size: 12px;
+  color: #c40000;
+  margin-top: 3px;
+}
+
+/* ===== IMAGE PREVIEW ===== */
+.vendPreview_guru {
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  object-fit: cover;
+}
+
+/* ===== BUTTONS ===== */
+.vendBtn_guru {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===== PRIMARY BUTTON ===== */
+.vendBtnPrimary_guru {
+  background: linear-gradient(#f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  color: #111;
+}
+
+.vendBtnPrimary_guru:hover {
+  background: linear-gradient(#f5d78e, #eeb933);
+}
+
+/* ===== DANGER BUTTON ===== */
+.vendBtnDanger_guru {
+  background: #fff;
+  border: 1px solid #d5d9d9;
+  color: #111;
+  margin-top: 8px;
+}
+
+.vendBtnDanger_guru:hover {
+  background: #f7fafa;
+}
+
+/* ===== ACTIONS ===== */
+.vendActions_guru {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .vendBox_guru {
+    width: 90%;
+    padding: 20px;
+  }
+}

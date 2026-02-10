@@ -1,0 +1,161 @@
+/* ================= PAGE TITLE ================= */
+.cityTitle_guru {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= MAIN FORM CARD ================= */
+.cityContainer_guru {
+  background: #ffffff;
+  width: 80%;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-bottom: 25px;
+}
+
+/* ================= FORM TABLE ================= */
+.cityFormTable_guru {
+  width: 70%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.cityLabel_guru {
+  text-align: left;
+  font-size: 13px;
+  color: #111;
+  padding-right: 10px;
+}
+
+/* ================= INPUTS ================= */
+.cityInput_guru,
+.citySelect_guru {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.cityInput_guru:focus,
+.citySelect_guru:focus {
+  outline: none;
+  border-color: #ff9900; /* Amazon orange */
+}
+
+/* ================= BUTTON BAR ================= */
+.cityBtnTable_guru {
+  margin-top: 20px;
+}
+
+.cityBtnTable_guru td {
+  padding: 0 5px;
+}
+
+/* COMMON BUTTON STYLE */
+.cityBtnTable_guru button {
+  padding: 7px 14px;
+  font-size: 13px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* INDIVIDUAL BUTTON COLORS */
+.cityBtnNew_guru {
+  background: #232f3e;
+  color: #fff;
+}
+
+.cityBtnSave_guru {
+  background: #ff9900;
+  color: #111;
+  font-weight: bold;
+}
+
+.cityBtnShow_guru,
+.cityBtnSearch_guru,
+.cityBtnUpdate_guru {
+  background: #37475a;
+  color: #fff;
+}
+
+.cityBtnDelete_guru {
+  background: #d32f2f;
+  color: #fff;
+}
+
+/* HOVER EFFECT */
+.cityBtnTable_guru button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ================= DATA TABLE CONTAINER ================= */
+.cityTableContainer_guru {
+  background: #ffffff;
+  width: 85%;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ================= DATA TABLE ================= */
+.cityDataTable_guru {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cityDataTable_guru th {
+  background: #f3f3f3;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cityDataTable_guru td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ROW HOVER */
+.cityDataTable_guru tr:hover {
+  background: #fafafa;
+}
+
+/* STATUS TEXT */
+.cityDataTable_guru h5 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cityDataTable_guru h5:contains("enable") {
+  color: green;
+}
+
+.cityDataTable_guru h5:contains("disable") {
+  color: red;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .cityContainer_guru,
+  .cityTableContainer_guru {
+    width: 95%;
+  }
+
+  .cityFormTable_guru {
+    width: 100%;
+  }
+
+  .cityBtnTable_guru td {
+    display: block;
+    margin-bottom: 8px;
+  }
+}

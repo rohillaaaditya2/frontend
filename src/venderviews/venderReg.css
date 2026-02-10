@@ -1,0 +1,76 @@
+/* ---------- Page Wrapper ---------- */
+.venderreg-container {
+    background: #f7fbff;           /* Soft blue background */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------- Form Card ---------- */
+.venderreg-form {
+    width: 450px;
+    background: #ffffff;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* ---------- Title ---------- */
+.venderreg-form h2 {
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #c7d8ff;
+}
+
+/* ---------- Status Message ---------- */
+.status {
+    text-align: center;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+/* ---------- Form Group ---------- */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 5px;
+}
+
+/* ---------- Input Fields ---------- */
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #b5c7ff;
+    background-color: #f0f4ff;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    background-color: #e8edff;
+    box-shadow: 0 0 4px #a5b4fc;
+}
+
+/* ---------- Readonly Vendor ID ---------- */
+.readonly {
+    padding: 8px;
+    background: #e0eaff;
+    border-radius: 6px;
+    color: #1e40af;
+    font-weight: bold;
+}

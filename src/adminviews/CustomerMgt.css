@@ -1,0 +1,122 @@
+/* ================= AMAZON BASE ================= */
+body {
+  background-color: #eaeded;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= PAGE TITLE ================= */
+.MuiTypography-h4 {
+  color: #111 !important;
+  font-weight: bold !important;
+}
+
+/* ================= TABLE ================= */
+.MuiPaper-root {
+  border-radius: 4px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+}
+
+.MuiTableHead-root {
+  background-color: #f3f3f3;
+}
+
+.MuiTableCell-head {
+  font-weight: bold !important;
+  font-size: 13px !important;
+  color: #111 !important;
+}
+
+.MuiTableCell-body {
+  font-size: 13px !important;
+}
+
+.MuiTableRow-root:hover {
+  background-color: #fafafa;
+}
+
+/* ================= BUTTONS ================= */
+.MuiButton-containedSuccess {
+  background-color: #2e7d32 !important;
+}
+
+.MuiButton-outlinedError {
+  border-color: #d32f2f !important;
+  color: #d32f2f !important;
+}
+
+.MuiButton-root {
+  font-size: 12px !important;
+  text-transform: none !important;
+}
+
+/* VIEW / EDIT BUTTON */
+.MuiButton-outlined {
+  border-color: #ff9900 !important;
+  color: #ff9900 !important;
+}
+
+.MuiButton-outlined:hover {
+  background-color: rgba(255,153,0,0.08) !important;
+}
+
+/* ================= DIALOG ================= */
+.MuiDialog-paper {
+  border-radius: 6px !important;
+  min-width: 500px;
+}
+
+.MuiDialogTitle-root {
+  background-color: #131921;
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+.MuiDialogContent-root {
+  padding-top: 20px !important;
+}
+
+/* ================= TEXTFIELDS ================= */
+.MuiInputBase-root {
+  font-size: 13px !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #ff9900 !important;
+}
+
+/* ================= SELECT ================= */
+.MuiSelect-select {
+  font-size: 13px !important;
+}
+
+/* ================= AVATAR ================= */
+.MuiAvatar-root {
+  border: 2px solid #ff9900;
+}
+
+/* ================= LOADING OVERLAY ================= */
+.MuiCircularProgress-root {
+  color: #ff9900 !important;
+}
+
+/* ================= CONFIRM DIALOG ================= */
+.MuiDialogActions-root button:last-child {
+  background-color: #ff9900 !important;
+  color: #111 !important;
+}
+
+.MuiDialogActions-root button:last-child:hover {
+  background-color: #e68a00 !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .MuiDialog-paper {
+    min-width: 90% !important;
+  }
+
+  .MuiTableCell-head,
+  .MuiTableCell-body {
+    font-size: 12px !important;
+  }
+}

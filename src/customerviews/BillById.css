@@ -1,0 +1,197 @@
+/* ================= PAGE BASE ================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #111;
+}
+
+h4 {
+  margin: 15px 0 10px;
+  color: #222;
+}
+
+/* ================= LOADER ================= */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #ff9900;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= FILTER BAR ================= */
+.table-h3 {
+  margin: 15px auto;
+  background: #f8f8f8;
+  padding: 12px 16px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.table-h3 td {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.table-h3 select {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+/* ================= BILL CARD ================= */
+.table-border {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-border th {
+  background: #f3f3f3;
+  padding: 10px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-border td {
+  padding: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+.table-border tr:hover {
+  background: #fafafa;
+}
+
+.table-border img {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* ================= BILL SUMMARY ================= */
+p {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #333;
+}
+
+/* ================= ACTION BUTTONS ================= */
+button {
+  margin: 8px 6px 0 0;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Download bill */
+button[style*="black"] {
+  background: #111;
+  color: #fff;
+}
+
+button[style*="black"]:hover {
+  background: #000;
+}
+
+/* Track order */
+button:not([style*="black"]):not([style*="green"]) {
+  background: #007185;
+  color: #fff;
+}
+
+button:not([style*="black"]):not([style*="green"]):hover {
+  background: #005f6a;
+}
+
+/* Download all */
+button[style*="green"] {
+  background: #067d62;
+  color: #fff;
+}
+
+button[style*="green"]:hover {
+  background: #056653;
+}
+
+/* ================= TRACKING POPUP ================= */
+.traching {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+  background: #fff;
+  width: 520px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.tracking-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.tracking-close:hover {
+  color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .table-border {
+    font-size: 12px;
+  }
+
+  .popup {
+    width: 90%;
+  }
+
+  .table-h3 {
+    width: 95%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+  }
+}

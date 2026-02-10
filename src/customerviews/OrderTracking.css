@@ -1,0 +1,193 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.Ord-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+/* ===== TITLE ===== */
+.Ord-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+/* ===== LABEL + DROPDOWN ===== */
+.lablee {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.Ord-Bill {
+  width: 100%;
+  max-width: 320px;
+  padding: 8px 10px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.Ord-Bill:focus {
+  outline: none;
+  border-color: #f90;
+  box-shadow: 0 0 0 2px rgba(255,153,0,0.35);
+}
+
+/* ===== ORDER CARD ===== */
+.order_card {
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 18px;
+  background: #fafafa;
+}
+
+.order_card h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #111;
+}
+
+.order_card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== STATUS BADGE ===== */
+.status-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status-Processing { background: #6c757d; }
+.status-OrderPlaced { background: #0073bb; }
+.status-Packed { background: #ff9900; }
+.status-Shipped { background: #007185; }
+.status-OutforDelivery { background: #f08804; }
+.status-Delivered { background: #067d62; }
+.status-Cancelled { background: #b12704; }
+
+/* ===== PROGRESS BAR ===== */
+.progress-wraperr {
+  margin: 20px 0;
+}
+
+.progress-line {
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #f90;
+  transition: width 0.4s ease;
+}
+
+/* ===== STEPS ===== */
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.progress-step {
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+  color: #777;
+}
+
+.progress-step.active {
+  color: #111;
+  font-weight: 600;
+}
+
+.ordestrpcirlce {
+  width: 26px;
+  height: 26px;
+  margin: 0 auto 6px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #555;
+  line-height: 26px;
+  font-size: 12px;
+}
+
+.progress-step.active .ordestrpcirlce {
+  background: #f90;
+  color: #111;
+  font-weight: bold;
+}
+
+/* ===== TIMELINE ===== */
+.ordertimeline {
+  margin-top: 24px;
+  border-left: 3px solid #ddd;
+  padding-left: 20px;
+}
+
+.ordtimeline-item {
+  position: relative;
+  margin-bottom: 14px;
+  color: #777;
+  font-size: 14px;
+}
+
+.ordtimeline-item.completed {
+  color: #111;
+  font-weight: 500;
+}
+
+.ordmarker {
+  position: absolute;
+  left: -12px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.ordtimeline-item.completed .ordmarker {
+  background: #f90;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .Ord-container {
+    margin: 10px;
+    padding: 16px;
+  }
+
+  .progress-steps {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .progress-step {
+    width: 30%;
+  }
+}

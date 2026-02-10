@@ -1,0 +1,121 @@
+/* ===== AMAZON THEME VARIABLES ===== */
+:root {
+  --amazon-bg: #eaeef2;
+  --amazon-card: #ffffff;
+  --amazon-border: #d5d9d9;
+  --amazon-primary: #f0c14b;
+  --amazon-primary-hover: #ddb347;
+  --amazon-text: #111;
+  --amazon-muted: #565959;
+  --amazon-error: #c40000;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.cl-container {
+  min-height: 100vh;
+  background: var(--amazon-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== LOGIN CARD ===== */
+.cl-form {
+  width: 360px;
+  background: var(--amazon-card);
+  border: 1px solid var(--amazon-border);
+  border-radius: 8px;
+  padding: 24px 26px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* ===== HEADER ===== */
+.cl-header {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 18px;
+  color: var(--amazon-text);
+}
+
+/* ===== INPUTS ===== */
+.cl-input {
+  width: 100%;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  border: 1px solid var(--amazon-border);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.cl-input:focus {
+  outline: none;
+  border-color: #007185;
+  box-shadow: 0 0 0 3px rgba(0,113,133,0.15);
+}
+
+/* ===== ERRORS ===== */
+.cl-error {
+  color: var(--amazon-error);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+/* ===== REMEMBER ME ===== */
+.cl-remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 14px;
+  font-size: 13px;
+  color: var(--amazon-text);
+}
+
+/* ===== BUTTON ===== */
+.cl-btn {
+  width: 100%;
+  background: linear-gradient(#f7dfa5, var(--amazon-primary));
+  border: 1px solid #a88734;
+  border-radius: 6px;
+  padding: 9px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cl-btn:hover {
+  background: linear-gradient(#f5d78e, var(--amazon-primary-hover));
+}
+
+/* ===== LINKS ===== */
+.cl-forgot,
+.cl-back {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #0066c0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cl-forgot:hover,
+.cl-back:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORGOT MESSAGE ===== */
+.cl-message {
+  font-size: 13px;
+  color: green;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 420px) {
+  .cl-form {
+    width: 90%;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,231 @@
+/* ================= PAGE WRAPPER ================= */
+.vendor-sales-page {
+  background: #eaeded; /* Amazon background */
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= TITLE ================= */
+.vendor-sales-page h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+/* ================= FILTER BAR ================= */
+.vendor-sales-page select,
+.vendor-sales-page input {
+  padding: 6px 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.vendor-sales-page select:focus,
+.vendor-sales-page input:focus {
+  outline: none;
+  border-color: #ff9900;
+}
+
+/* ================= BUTTONS ================= */
+.vendor-sales-page button {
+  background: #232f3e;
+  color: white;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vendor-sales-page button:hover {
+  border-color: #ff9900;
+  color: #ff9900;
+}
+
+/* PDF BUTTON */
+.vendor-sales-page button:first-of-type {
+  background: #ff9900;
+  color: #111;
+  font-weight: bold;
+}
+
+.vendor-sales-page button:first-of-type:hover {
+  background: #e68a00;
+}
+
+/* ================= TABLE ================= */
+.vendor-sales-page table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.vendor-sales-page th {
+  background: #f3f3f3;
+  color: #111;
+  padding: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.vendor-sales-page td {
+  padding: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+.vendor-sales-page tr:hover {
+  background: #f9f9f9;
+}
+
+/* PRODUCT IMAGE */
+.vendor-sales-page img {
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* ================= PAGINATION ================= */
+.vendor-sales-page .pagination {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.vendor-sales-page .pagination button {
+  margin: 0 5px;
+}
+
+/* ================= SUMMARY ================= */
+.vendor-sales-page h4 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #111;
+}
+
+/* ================= CHART ================= */
+.vendor-sales-page canvas {
+  background: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ================= POPUP OVERLAY ================= */
+.popup=overlay,
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ================= POPUP CONTENT ================= */
+.popup-content {
+  background: #fff;
+  width: 90%;
+  max-width: 850px;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* HEADER */
+.popup-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.popup-header h2 {
+  margin: 0;
+  color: #111;
+}
+
+.popup-header p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* POPUP TABLE */
+.popup-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.popup-table th {
+  background: #f3f3f3;
+  padding: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid #ddd;
+}
+
+.popup-table td {
+  padding: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ================= POPUP BUTTONS ================= */
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.popup-buttons .btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.popup-buttons .btn-info {
+  background: #ff9900;
+  color: #111;
+  border: none;
+}
+
+.popup-buttons .btn-info:hover {
+  background: #e68a00;
+}
+
+.popup-buttons .btn-danger {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+}
+
+.popup-buttons .btn-danger:hover {
+  background: #b71c1c;
+}
+
+/* ================= LOADING ================= */
+.MuiLinearProgress-root {
+  margin-top: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .vendor-sales-page {
+    padding: 10px;
+  }
+
+  .popup-content {
+    padding: 15px;
+  }
+
+  .vendor-sales-page table,
+  .popup-table {
+    font-size: 12px;
+  }
+}

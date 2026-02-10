@@ -1,0 +1,109 @@
+/* ====== LAYOUT ====== */
+.ch-container {
+  display: flex;
+  min-height: 100vh;
+  background: #eaeded;
+  font-family: Arial, sans-serif;
+}
+
+/* ====== SIDEBAR ====== */
+.ch-sidebar {
+  width: 240px;
+  background: #131921;
+  color: white;
+  padding-top: 20px;
+}
+
+.ch-user-box {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #2c3e50;
+}
+
+.ch-user-box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #febd69;
+}
+
+.ch-user-box h4 {
+  margin-top: 10px;
+  color: #febd69;
+}
+
+/* ====== SIDEBAR MENU ====== */
+.ch-menu {
+  margin-top: 20px;
+}
+
+.ch-menu button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ch-menu button:hover {
+  background: #232f3e;
+}
+
+.ch-menu .active {
+  background: #febd69;
+  color: #111;
+  font-weight: bold;
+}
+
+.ch-menu .logout {
+  color: #ff6b6b;
+}
+
+/* ====== MAIN CONTENT ====== */
+.ch-main {
+  flex: 1;
+  padding: 25px;
+}
+
+/* ====== TOP BAR ====== */
+.ch-topbar {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ch-topbar h2 {
+  font-size: 20px;
+  color: #111;
+}
+
+/* ====== CARDS ====== */
+.ch-card {
+  background: white;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .ch-container {
+    flex-direction: column;
+  }
+
+  .ch-sidebar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,174 @@
+/* ===== BASE RESET ===== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== MAIN WRAPPER ===== */
+.Track {
+  max-width: 850px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 6px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.15);
+}
+
+/* ===== TITLE ===== */
+.TracTitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 18px;
+}
+
+/* ===== ORDER CARD ===== */
+.order-Cardd {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 22px;
+}
+
+.order-Cardd h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #111;
+}
+
+.order-Cardd p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== STATUS BADGES ===== */
+[class^="status-badge-statt"] {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status-badge-statt-Processing { background: #6c757d; }
+.status-badge-statt-OrderPlaced { background: #0073bb; }
+.status-badge-statt-Packed { background: #ff9900; }
+.status-badge-statt-Shipped { background: #007185; }
+.status-badge-statt-OutforDelivery { background: #f08804; }
+.status-badge-statt-Delivered { background: #067d62; }
+.status-badge-statt-Cancelled { background: #b12704; }
+
+/* ===== PROGRESS BAR ===== */
+.ProgressWraperr {
+  margin-bottom: 26px;
+}
+
+.ProgLink {
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.Progrf {
+  height: 100%;
+  background: #f90;
+  transition: width 0.4s ease;
+}
+
+/* ===== STEP LABELS ===== */
+.Progress-Stepp {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.progresasd {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  width: 100%;
+}
+
+.progresasd.active {
+  color: #111;
+  font-weight: 600;
+}
+
+.stpCircle {
+  width: 26px;
+  height: 26px;
+  margin: 0 auto 6px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #555;
+  line-height: 26px;
+  font-size: 12px;
+}
+
+.progresasd.active .stpCircle {
+  background: #f90;
+  color: #111;
+  font-weight: bold;
+}
+
+.stepLab {
+  font-size: 11px;
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  margin-top: 24px;
+  border-left: 3px solid #ddd;
+  padding-left: 18px;
+}
+
+.timelinee-item {
+  position: relative;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #777;
+}
+
+.timelinee-item.completed {
+  color: #111;
+  font-weight: 500;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -11px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.timelinee-item.completed .timeline-marker {
+  background: #f90;
+}
+
+.timeline-contentt {
+  padding-left: 6px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .Track {
+    padding: 16px;
+    margin: 10px;
+  }
+
+  .Progress-Stepp {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .progresasd {
+    width: 30%;
+  }
+}

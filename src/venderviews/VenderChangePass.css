@@ -1,0 +1,192 @@
+/* ===== PAGE WRAPPER ===== */
+.vcp-container {
+  min-height: 100vh;
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== CARD ===== */
+.vcp-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 22px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* ===== TITLE ===== */
+.vcp-heading {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+  color: #0f1111;
+  letter-spacing: 0.5px;
+}
+
+/* ===== ALERTS ===== */
+.vcp-alert {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.vcp-success {
+  background: #e6f4ea;
+  color: #007600;
+  border: 1px solid #a6d8a8;
+}
+
+.vcp-error {
+  background: #fdecea;
+  color: #b12704;
+  border: 1px solid #f5c6cb;
+}
+
+/* ===== FORM ===== */
+.vcp-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== LABEL ===== */
+.vcp-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px 0 4px;
+  color: #0f1111;
+}
+
+/* ===== INPUT ===== */
+.vcp-input {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 6px;
+  border: 1px solid #a6a6a6;
+  font-size: 14px;
+}
+
+.vcp-input:focus {
+  outline: none;
+  border-color: #f08804;
+  box-shadow: 0 0 0 2px rgba(240,136,4,0.25);
+}
+
+/* ===== PASSWORD FIELD ===== */
+.vcp-pass-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.vcp-eye {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #565959;
+  font-size: 16px;
+}
+
+.vcp-eye:hover {
+  color: #0f1111;
+}
+
+/* ===== PASSWORD STRENGTH ===== */
+.vcp-strength {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.vcp-bar {
+  flex: 1;
+  height: 6px;
+  background: #e6e6e6;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vcp-bar::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0%;
+  background: red;
+  transition: width 0.3s ease;
+}
+
+/* strength levels */
+.vcp-level-1::after {
+  width: 25%;
+  background: #b12704;
+}
+
+.vcp-level-2::after {
+  width: 50%;
+  background: #f08804;
+}
+
+.vcp-level-3::after {
+  width: 75%;
+  background: #f7ca00;
+}
+
+.vcp-level-4::after {
+  width: 100%;
+  background: #007600;
+}
+
+.vcp-strength-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #565959;
+}
+
+/* ===== BUTTON ===== */
+.vcp-btn {
+  margin-top: 16px;
+  padding: 10px;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.vcp-btn:hover {
+  background: #f7ca00;
+}
+
+.vcp-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== HINT ===== */
+.vcp-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #565959;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .vcp-card {
+    padding: 18px;
+  }
+
+  .vcp-heading {
+    font-size: 18px;
+  }
+}

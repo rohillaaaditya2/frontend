@@ -1,0 +1,134 @@
+/* ===== ROOT ===== */
+.evp-container {
+  width: 100%;
+  max-width: 520px;
+  margin: 20px auto;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 22px 26px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== HEADING ===== */
+.evp-heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f1111;
+  margin-bottom: 18px;
+}
+
+/* ===== INPUTS ===== */
+.evp-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #a6a6a6;
+  font-size: 14px;
+}
+
+.evp-input:focus {
+  outline: none;
+  border-color: #f08804;
+  box-shadow: 0 0 0 2px rgba(240, 136, 4, 0.25);
+}
+
+/* ===== IMAGE SECTION ===== */
+.evp-image-section {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e3e6e6;
+}
+
+.evp-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* ===== CURRENT IMAGE ===== */
+.evp-current-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ===== PREVIEW IMAGE ===== */
+.evp-preview-section {
+  margin-top: 10px;
+}
+
+.evp-preview-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px dashed #f08804;
+  margin-bottom: 10px;
+}
+
+/* ===== FILE INPUT ===== */
+.evp-file-input {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* ===== BUTTON GROUP ===== */
+.evp-btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ===== BUTTONS ===== */
+.evp-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+/* SAVE */
+.evp-btn-save {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  color: #0f1111;
+}
+
+.evp-btn-save:hover {
+  background: #f7ca00;
+}
+
+/* CANCEL */
+.evp-btn-cancel {
+  background: #e7e9ec;
+  border: 1px solid #adb1b8;
+  color: #111;
+}
+
+.evp-btn-cancel:hover {
+  background: #d5d9d9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .evp-container {
+    margin: 10px;
+    padding: 18px;
+  }
+
+  .evp-btn-group {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,165 @@
+/* ================= ROOT ================= */
+.mainpage {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= THEMES ================= */
+.mainpage.light {
+  background: #eaeaea;
+  color: #111;
+}
+
+.mainpage.dark {
+  background: #0f1111;
+  color: #fff;
+}
+
+.mainpage.accent {
+  background: #232f3e;
+  color: #fff;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+
+/* HEADER COLOR */
+.mainpage.light .main-header {
+  background: #ffffff;
+}
+
+.mainpage.dark .main-header {
+  background: #131921;
+}
+
+.mainpage.accent .main-header {
+  background: #232f3e;
+}
+
+/* ================= LEFT ================= */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #febd69;
+}
+
+/* LOCATION */
+.location-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.location-box small {
+  font-size: 11px;
+  color: #ccc;
+}
+
+.location-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ================= CENTER SEARCH ================= */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 60%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* ================= RIGHT ================= */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* NAV */
+.main-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  padding: 6px 8px;
+}
+
+/* ICON BUTTON */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* THEME TEXT */
+.theme-text {
+  font-size: 12px;
+}
+
+/* CART */
+.cart-icon {
+  position: relative;
+  font-size: 18px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* ================= LIGHT THEME TEXT FIX ================= */
+.mainpage.light .logo,
+.mainpage.light .cart-icon,
+.mainpage.light .main-nav a,
+.mainpage.light .icon-btn,
+.mainpage.light .location-box {
+  color: #111;
+}
+
+.mainpage.light .search-input {
+  background: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
+/* DARK + ACCENT */
+.mainpage.dark .logo,
+.mainpage.dark .cart-icon,
+.mainpage.dark .main-nav a,
+.mainpage.dark .icon-btn,
+.mainpage.dark .location-box,
+.mainpage.accent .logo,
+.mainpage.accent .cart-icon,
+.mainpage.accent .main-nav a,
+.mainpage.accent .icon-btn,
+.mainpage.accent .location-box {
+  color: #fff;
+}

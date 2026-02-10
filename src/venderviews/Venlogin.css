@@ -1,0 +1,125 @@
+/* Main container */
+.vlg-container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #e3f2fd, #f8fbff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft floating background effect */
+.vlg-container::before,
+.vlg-container::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(30,144,255,0.15) 0%, transparent 60%);
+    animation: vlg-float 12s linear infinite;
+}
+
+@keyframes vlg-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
+}
+
+/* Form box */
+.vlg-form {
+    width: 360px;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(30,144,255,0.25);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Heading */
+.vlg-heading {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #1e90ff;
+    font-weight: 700;
+}
+
+/* Input fields */
+.vlg-input {
+    width: 90%;
+    padding: 12px 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1.8px solid #dce6f2;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #f9fcff;
+}
+
+.vlg-input:focus {
+    border-color: #1e90ff;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(30,144,255,0.25);
+}
+
+/* Remember me */
+.vlg-remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: #444;
+    justify-content: center;
+}
+
+.vlg-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.vlg-label {
+    cursor: pointer;
+}
+
+/* Buttons */
+.vlg-btn {
+    width: 95%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* LOGIN button */
+.vlg-btn-login {
+    background: linear-gradient(135deg, #1e90ff, #4fc3f7);
+    color: #fff;
+}
+
+.vlg-btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(30,144,255,0.4);
+}
+
+/* Forget button */
+.vlg-btn-forget {
+    background: #f1f5f9;
+    color: #1e90ff;
+    border: 1px solid #d0e2ff;
+}
+
+.vlg-btn-forget:hover {
+    background: #e3f2fd;
+    transform: translateY(-2px);
+}

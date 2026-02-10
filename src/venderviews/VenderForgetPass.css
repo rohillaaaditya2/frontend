@@ -1,0 +1,91 @@
+/* ===== PAGE WRAPPER ===== */
+.vfp-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 22px 24px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== HEADING ===== */
+.vfp-heading {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+/* ===== INPUT ===== */
+.vfp-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #a6a6a6;
+  font-size: 14px;
+}
+
+.vfp-input:focus {
+  outline: none;
+  border-color: #f08804;
+  box-shadow: 0 0 0 2px rgba(240,136,4,0.25);
+}
+
+/* ===== BUTTON BASE ===== */
+.vfp-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: none;
+}
+
+/* ===== PRIMARY (SEND OTP) ===== */
+.vfp-btn-primary {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  color: #0f1111;
+}
+
+.vfp-btn-primary:hover {
+  background: #f7ca00;
+}
+
+/* ===== SUCCESS (RESET PASSWORD) ===== */
+.vfp-btn-success {
+  background: #28a745;
+  color: #ffffff;
+}
+
+.vfp-btn-success:hover {
+  background: #218838;
+}
+
+/* ===== CANCEL / BACK ===== */
+.vfp-btn-cancel {
+  background: #e7e9ec;
+  color: #0f1111;
+  border: 1px solid #adb1b8;
+}
+
+.vfp-btn-cancel:hover {
+  background: #d5d9d9;
+}
+
+/* ===== SMALL SCREEN ===== */
+@media (max-width: 480px) {
+  .vfp-container {
+    margin: 30px 12px;
+    padding: 18px;
+  }
+
+  .vfp-heading {
+    font-size: 18px;
+  }
+}

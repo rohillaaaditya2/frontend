@@ -1,0 +1,146 @@
+/* ================= PAGE WRAPPER ================= */
+.productcatg-container {
+  background: #eaeded;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= TITLE ================= */
+.productcatg-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+/* ================= FORM TABLE ================= */
+.productcatg-table {
+  background: #ffffff;
+  width: 60%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-bottom: 25px;
+}
+
+.productcatg-table td {
+  font-size: 13px;
+  color: #111;
+}
+
+/* ================= INPUT ================= */
+.productcatg-table input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.productcatg-table input:focus {
+  outline: none;
+  border-color: #ff9900;
+}
+
+/* ================= BUTTONS ================= */
+.productcatg-table button,
+.list-table button {
+  padding: 7px 14px;
+  font-size: 13px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* SAVE / UPDATE */
+.productcatg-table button:first-child {
+  background: #ff9900;
+  color: #111;
+  font-weight: bold;
+}
+
+.productcatg-table button:first-child:hover {
+  background: #e68a00;
+}
+
+/* SHOW BUTTON */
+.productcatg-table button:last-child {
+  background: #232f3e;
+  color: #fff;
+}
+
+.productcatg-table button:last-child:hover {
+  opacity: 0.9;
+}
+
+/* ================= LIST TITLE ================= */
+.productcatg-list-title {
+  font-size: 16px;
+  margin: 20px 0 10px;
+  color: #111;
+}
+
+/* ================= LIST TABLE ================= */
+.list-table {
+  width: 70%;
+  background: #ffffff;
+  border-collapse: collapse;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.list-table th {
+  background: #f3f3f3;
+  font-size: 13px;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-table td {
+  font-size: 13px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+/* COLUMN WIDTHS */
+.list-table .id {
+  width: 80px;
+}
+
+.list-table .act {
+  width: 120px;
+  text-align: center;
+}
+
+/* ROW HOVER */
+.list-table tr:hover {
+  background: #fafafa;
+}
+
+/* EDIT BUTTON */
+.list-table .act button,
+.list-table button.act {
+  background: #232f3e;
+  color: #fff;
+}
+
+.list-table button.act:hover {
+  color: #ff9900;
+  border-color: #ff9900;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .productcatg-table,
+  .list-table {
+    width: 95%;
+  }
+
+  .productcatg-title {
+    font-size: 18px;
+  }
+}

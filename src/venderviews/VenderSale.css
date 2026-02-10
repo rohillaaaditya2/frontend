@@ -1,0 +1,172 @@
+/* ================= ROOT ================= */
+.Vender-Sales-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f8fafc, #eef2ff);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: #1e293b;
+    padding: 18px;
+}
+
+/* ================= HEADER ================= */
+.Vender-Sales-page header {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= BUTTON ================= */
+.venderbtn {
+    background: #ffffff;
+    color: #2563eb;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.venderbtn:hover {
+    background: #1e40af;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(30, 64, 175, 0.4);
+}
+
+/* ================= FILTERS ================= */
+.venderfilters {
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.venderfilters input {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #c7d2fe;
+}
+
+/* ================= TABLE ================= */
+.vendersaless table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.vendersaless th {
+    background: #eef2ff;
+    color: #1e293b;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.vendersaless td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.vendersaless tr:hover {
+    background: #f8fafc;
+}
+
+/* ================= PAGINATION ================= */
+.venderpaggination button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #c7d2fe;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.venderpaggination button:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* ================= SUMMARY TABLE ================= */
+table[style*="color:white"] {
+    background: #ffffff;
+    color: #1e293b !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+table[style*="color:white"] tr {
+    cursor: pointer;
+}
+
+table[style*="color:white"] tr:hover {
+    background: #eef2ff;
+}
+
+/* ================= POPUP ================= */
+.venderpopup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.venderpopup .vendercontent {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    width: 95%;
+    max-width: 850px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ================= POPUP HEADER ================= */
+.venderpopupheader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* ================= POPUP BUTTONS ================= */
+.venderpop {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.venderbuttont {
+    background: #2563eb;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.venderclose {
+    background: #e5e7eb;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+.Venderfooter {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background: #eef2ff;
+    border-radius: 8px;
+    font-weight: 600;
+}

@@ -1,0 +1,153 @@
+/* ===== PAGE TITLE ===== */
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px !important;
+    color: #111 !important;
+    background: #f0f2f2 !important;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* ===== FORM BOX ===== */
+.stateBox_guru {
+    width: 520px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== LABELS ===== */
+.stateLabel_id_guru,
+.stateLabel_name_guru,
+.stateLabel_status_guru {
+    font-size: 13px;
+    font-weight: bold;
+    color: #111;
+    padding-right: 12px;
+}
+
+/* ===== INPUTS (Amazon style) ===== */
+.form-control {
+    width: 260px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #007185;
+    box-shadow: 0 0 0 3px rgba(0,113,133,0.25);
+}
+
+/* ===== BUTTONS ===== */
+.btn-new_guru,
+.btn-save_guru,
+.btn-show_guru,
+.btn-update_guru,
+.btn-delete_guru {
+    min-width: 90px;
+    padding: 7px 10px;
+    margin: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #a88734;
+    background: linear-gradient(#f7dfa5, #f0c14b);
+    color: #111;
+}
+
+.btn-new_guru:hover,
+.btn-save_guru:hover,
+.btn-show_guru:hover,
+.btn-update_guru:hover {
+    background: linear-gradient(#f5d78e, #eeb933);
+}
+
+/* Delete = warning */
+.btn-delete_guru {
+    background: linear-gradient(#f8d7da, #f1b0b7);
+    border: 1px solid #d9534f;
+}
+
+.btn-delete_guru:hover {
+    background: linear-gradient(#f1b0b7, #e27c87);
+}
+
+/* ===== TABLE BOX ===== */
+.stateBox_table_guru {
+    width: 700px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== TABLE ===== */
+.stateBox_table_guru table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stateBox_table_guru th {
+    background: #f0f2f2;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-size: 13px;
+    text-align: left;
+    color: #111;
+}
+
+.stateBox_table_guru td {
+    padding: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== STATUS ===== */
+.stateCol_status_guru h5 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #067d62;
+}
+
+.stateCol_status_guru h5:last-child {
+    color: #b12704;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .stateBox_guru,
+    .stateBox_table_guru {
+        width: 95%;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+}
+/* ===== BUTTON ROW FIX ===== */
+.stateBox_guru table:last-child {
+    width: 100%;
+}
+
+.stateBox_guru table:last-child tr {
+    display: flex;
+    flex-wrap: wrap;          /* 🔥 buttons wrap honge */
+    justify-content: center;  /* center align */
+    gap: 12px;                /* buttons ke beech gap */
+}
+
+.stateBox_guru table:last-child td {
+    padding: 0;
+}
