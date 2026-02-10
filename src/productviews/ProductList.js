@@ -1,11 +1,8 @@
-
-// export default ProductList;
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Bill from "../customerviews/Bill";
 import "./ProductList.css";
 import { FaShoppingCart } from "react-icons/fa";
-
 
 function ProductList(props) {
     const [itemcount, setItemCount] = useState(0);
@@ -53,10 +50,7 @@ function ProductList(props) {
         axios
             .get(`https://server-app-xite.onrender.com/product/showproduct/${pid}`)
             .then((res) => {
-
-                //  ONLY FIX: backend returns ARRAY
-                if (res.data.status == "Active") {
-
+                if (res.data.status === "Active") {
                     const selected = plist.find((item) => item.pid === pid);
                     if (!selected) return;
 
@@ -142,61 +136,19 @@ function ProductList(props) {
         setShowBill(false);
     };
 
-    const handleUpdateCart = (pid, newQty) => {
-        setQuantites((prev) => {
-            const update = { ...prev, [pid]: newQty };
-            const total = Object.values(update).reduce(
-                (sum, v) => sum + v,
-                0
-            );
-            setItemCount(total);
-            return update;
-        });
+    const handleSearch = (evt) => {
+        const catgId = evt.target.value;
+
+        const url =
+            catgId > 0
+                ? `https://server-app-xite.onrender.com/product/showproductbycatgid/${catgId}`
+                : "https://server-app-xite.onrender.com/product/showproduct";
+
+        axios
+            .get(url)
+            .then((res) => setPList(res.data))
+            .catch((err) => alert(err));
     };
-
-    const handleRemoveItem = (pid) => {
-        setsellitem((prev) => prev.filter((item) => item.pid !== pid));
-
-        setQuantites((prev) => {
-            const updated = { ...prev };
-            delete updated[pid];
-            const total = Object.values(updated).reduce(
-                (sum, v) => sum + v,
-                0
-            );
-            setItemCount(total);
-            return updated;
-        });
-    };
-
-         const handleSearch = (evt) => {
-    const catgId = evt.target.value;
-
-    const url =
-        catgId > 0
-            ? `https://server-app-xite.onrender.com/product/showproductbycatgid/${catgId}`
-            : "https://server-app-xite.onrender.com/product/showproduct";
-
-    axios
-        .get(url)
-        .then((res) => setPList(res.data))
-        .catch((err) => alert(err));
-};
-
-
-    // const handleSearch = (evt) => {
-    //     const catgId = evt.target.value;
-
-    //     const url =
-    //         catgId > 0
-    //             ? `http://localhost:9876/product/showproductbycatid/${catgId}`
-    //             : "http://localhost:9876/product/showproduct";
-
-    //     axios
-    //         .get(url)
-    //         .then((res) => setPList(res.data))
-    //         .catch((err) => alert(err));
-    // };
 
     if (showBill) {
         return (
@@ -204,8 +156,6 @@ function ProductList(props) {
                 data={{ sellitem, cid, quantities }}
                 onBack={() => setShowBill(false)}
                 onPaymentSuccess={handlePaymentSuccess}
-                onUpdateCart={handleUpdateCart}
-                onRemoveItem={handleRemoveItem}
             />
         );
     }
@@ -214,22 +164,14 @@ function ProductList(props) {
         <>
             <div className="pl-customer-info">
                 <span className="pl-item-count">{itemcount}</span>
-{/* 
+
                 <button
                     onClick={handleCheckOutButton}
                     className="pl-checkout-btn"
                 >
+                    <FaShoppingCart className="pl-cart-icon" />
                     Checkout
-                </button> */}
-
-                <button
-                   onClick={handleCheckOutButton}
-                      className="pl-checkout-btn"
-               >
-                     <FaShoppingCart className="pl-cart-icon" />
-                       Checkout
-                         </button>
-
+                </button>
             </div>
 
             <div className="pl-container-inner">
@@ -255,7 +197,10 @@ function ProductList(props) {
                                     <img
                                         height={100}
                                         width={100}
-                                        src={`https://server-app-xite.onrender.com/product/getproductimage/${item.ppicname}`}
+                                        src={
+                                            item.imageUrl ||
+                                            "https://via.placeholder.com/100"
+                                        }
                                         alt={item.pname}
                                     />
 

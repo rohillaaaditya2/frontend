@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import EditVenderProfile from "./EditVenderProfile";
 import Product from "../productviews/Product";
@@ -52,40 +51,55 @@ function VenderHome({ vender, onLogout }) {
       <aside className="vh-sidebar">
         <h2 className="vh-logo">Seller Central</h2>
 
-        <button onClick={() => setActiveSection("dashboard")}
-          className={activeSection === "dashboard" ? "active" : ""}>
+        <button
+          onClick={() => setActiveSection("dashboard")}
+          className={activeSection === "dashboard" ? "active" : ""}
+        >
           Dashboard
         </button>
 
-        <button onClick={() => setActiveSection("edit")}
-          className={activeSection === "edit" ? "active" : ""}>
+        <button
+          onClick={() => setActiveSection("edit")}
+          className={activeSection === "edit" ? "active" : ""}
+        >
           Edit Profile
         </button>
 
-        <button onClick={() => setActiveSection("password")}
-          className={activeSection === "password" ? "active" : ""}>
+        <button
+          onClick={() => setActiveSection("password")}
+          className={activeSection === "password" ? "active" : ""}
+        >
           Change Password
         </button>
 
-        <button onClick={() => setActiveSection("product")}
-          className={activeSection === "product" ? "active" : ""}>
+        <button
+          onClick={() => setActiveSection("product")}
+          className={activeSection === "product" ? "active" : ""}
+        >
           Manage Product
         </button>
 
-        <button onClick={() => setActiveSection("sales")}
-          className={activeSection === "sales" ? "active" : ""}>
+        <button
+          onClick={() => setActiveSection("sales")}
+          className={activeSection === "sales" ? "active" : ""}
+        >
           View Sales
         </button>
 
-        <button onClick={() => setActiveSection("inventory")}
-          className={activeSection === "inventory" ? "active" : ""}>
+        <button
+          onClick={() => setActiveSection("inventory")}
+          className={activeSection === "inventory" ? "active" : ""}
+        >
           Inventory
         </button>
 
-        <button className="logout" onClick={() => {
-          localStorage.removeItem("venderSession");
-          onLogout();
-        }}>
+        <button
+          className="logout"
+          onClick={() => {
+            localStorage.removeItem("venderSession");
+            onLogout();
+          }}
+        >
           Logout
         </button>
       </aside>
@@ -94,7 +108,7 @@ function VenderHome({ vender, onLogout }) {
       <main className="vh-main">
         <div className="vh-topbar">
           <img
-            src={`https://server-app-xite.onrender.com/vender/getimage/${vender.VPicName}`}
+            src={vender.imageUrl}
             alt="vendor"
           />
           <div>
@@ -103,9 +117,7 @@ function VenderHome({ vender, onLogout }) {
           </div>
         </div>
 
-        <div className="vh-content">
-          {renderContent()}
-        </div>
+        <div className="vh-content">{renderContent()}</div>
       </main>
     </div>
   );

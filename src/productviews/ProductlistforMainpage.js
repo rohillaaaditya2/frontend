@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Bill from "../customerviews/Bill";
@@ -136,7 +135,10 @@ export default function ProductListforMainpage({ searchText = "" }) {
           {customerSession ? (
             <>
               <img
-                src={`https://server-app-xite.onrender.com/customer/getimage/${customerSession.cpicname}`}
+                src={
+                  customerSession.imageUrl ||
+                  "https://via.placeholder.com/60"
+                }
                 className="customer_img"
                 alt=""
               />
@@ -167,7 +169,10 @@ export default function ProductListforMainpage({ searchText = "" }) {
               return (
                 <div className="product_card_wrapper" key={item.pid}>
                   <img
-                    src={`${ProUrl}getproductimage/${item.ppicname}`}
+                    src={
+                      item.imageUrl ||
+                      "https://via.placeholder.com/120"
+                    }
                     className="product_image"
                     alt=""
                   />

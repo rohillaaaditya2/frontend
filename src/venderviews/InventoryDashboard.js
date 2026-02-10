@@ -1,4 +1,3 @@
-
 import React, {
   useEffect,
   useState,
@@ -6,7 +5,7 @@ import React, {
   useCallback,
 } from "react";
 
- import "./InventoryDashboard.css";
+import "./InventoryDashboard.css";
 
 const API = "https://server-app-xite.onrender.com";
 
@@ -74,7 +73,7 @@ export default function InventoryDashboard({ vid }) {
         const map = {};
 
         products.forEach((p) => {
-          map[String(p.pid)] = p; // 🔥 IMPORTANT FIX
+          map[String(p.pid)] = p;
         });
 
         setProductMap(map);
@@ -227,8 +226,7 @@ export default function InventoryDashboard({ vid }) {
           </button>
           {lastSync && (
             <span className="inv-sync">
-              Synced{" "}
-              {lastSync.toLocaleTimeString()}
+              Synced {lastSync.toLocaleTimeString()}
             </span>
           )}
         </div>
@@ -282,9 +280,9 @@ export default function InventoryDashboard({ vid }) {
               key={`${inv.pid}-${inv.vid}`}
             >
               <div className="inv-product">
-                {product?.ppicname && (
+                {product?.imageUrl && (
                   <img
-                    src={`${API}/product/getproductimage/${product.ppicname}`}
+                    src={product.imageUrl}
                     alt=""
                   />
                 )}
