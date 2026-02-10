@@ -589,7 +589,7 @@ import React,{useState,useEffect,useCallback} from "react";
 
         if(data.cid)
         {
-            axios.get(`http://localhost:9876/customer/getcustomerdetails/${data.cid}`).then((res) => {
+            axios.get(`https://server-app-xite.onrender.com/customer/getcustomerdetails/${data.cid}`).then((res) => {
                 const body = res.data || {};
                 setCustomer({
                     name:body.CustomerName || body.name || "",
@@ -645,7 +645,7 @@ import React,{useState,useEffect,useCallback} from "react";
 
     const saveBill = useCallback(async () => {
          if(!items.length) return null;
-         const res = await axios.get("http://localhost:9876/bill/getbillid");
+         const res = await axios.get("https://server-app-xite.onrender.com:9876/bill/getbillid");
          const nextId = parseInt(res.data?.[0]?.billId || 0,10)+1;
          setBillId(nextId);
          const today = getCurrentDate();
@@ -653,7 +653,7 @@ import React,{useState,useEffect,useCallback} from "react";
          for (const item of items)
          {
             const qty = quantities[item.pid] || 1;
-            await axios.post ("http://localhost:9876/bill/billsave", {
+            await axios.post ("https://server-app-xite.onrender.com/bill/billsave", {
                 billid : nextId,
                 billdate: today,
                 cid: data.cid,
@@ -661,7 +661,7 @@ import React,{useState,useEffect,useCallback} from "react";
                 qty,
             });
 
-            await axios.post("http://localhost:9876/sales/add",{
+            await axios.post("https://server-app-xite.onrender.com/sales/add",{
                 venderId : item.vid ?? item.venderId ?? null,
                 productId : item.pid,
                 quantity : qty,
@@ -680,7 +680,7 @@ import React,{useState,useEffect,useCallback} from "react";
         if(!purchaseItems || purchaseItems.length === 0) 
             {return {success: true,message : "no items to purchase"}; }
 
-        const base = "http://localhost:9876";
+        const base = "https://server-app-xite.onrender.com";
 
         const endpoints = [ "/inventory/purchase"];
 
@@ -742,7 +742,7 @@ import React,{useState,useEffect,useCallback} from "react";
 
         try{
             const amountInPaisa = Math.round(totalAmount * 100);
-            const order = await axios.post(`http://localhost:9876/payment/orders/${amountInPaisa}`);
+            const order = await axios.post(`vhttps://server-app-xite.onrender.com/payment/orders/${amountInPaisa}`);
             // console.log("amount paisa",amountInPaisa);
             const {id: order_id,amount,currency } = order.data;
             
@@ -766,7 +766,7 @@ import React,{useState,useEffect,useCallback} from "react";
                 {
 
                     try {
-                        await axios.post("http://localhost:9876/paymentdetails/paymentdetailsave",{
+                        await axios.post("https://server-app-xite.onrender.com/paymentdetails/paymentdetailsave",{
                             orderCreationId:order_id,
                             razorpayPaymentId:response.razorpay_payment_id,
                             razorpayOrderId:response.razorpay_order_id,

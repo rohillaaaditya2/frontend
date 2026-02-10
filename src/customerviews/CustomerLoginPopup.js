@@ -29,7 +29,7 @@
                 setLoading(true);
 
                 try{
-                    const res = await axios.post("http://localhost:9876/customer/login", 
+                    const res = await axios.post("https://server-app-xite.onrender.com/customer/login", 
                         {
                             CUserId : uid,
                             CUserPass : upass,

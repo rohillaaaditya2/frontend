@@ -12,7 +12,7 @@
 
          const sendOtp = async () =>{
              try{
-                const res = await axios.post("http://localhost:9876/vender/send-otp", {
+                const res = await axios.post("https://server-app-xite.onrender.com/vender/send-otp", {
                     VUserId,
                    
                          });
@@ -28,7 +28,7 @@
 
          const resetPassword = async() =>{
             try{
-                const res = await axios.post("http://localhost:9876/vender/reset-password", {
+                const res = await axios.post("https://server-app-xite.onrender.com/vender/reset-password", {
                     VUserId,
                     otp,
                     newPassword,
@@ -87,37 +87,4 @@
      export default VenderForgetPassword;
 
            
-          // return(
-    //         <div style={{margin:20}}>
-    //            <h3>Vendor Forget Password</h3>
-    //           {step === 1 && (
-    //             <>
-    //              <input type="text" placeholder="Enter Vendor User ID" value={VUserId} onChange={(e) => setVUserId(e.target.value)}></input>
-    //               <br/>
-    //               <button onClick={sendOtp}>Send OTP</button>
-    //             </>
-    //           )}
-
-    //           {step === 2 && 
-    //           (
-    //             <>
-    //             <input type="text" placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)}></input>
-                
-    //              <br/>
-
-    //            <input type="password" placeholder="New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)}></input>
-
-    //               <br/>
-
-    //                  <button onClick={resetPassword}>Reset Password</button>
-    //              </>
-    //                 )}
-
-    //                 <br/>
-
-    //                 <button onClick={onBack}>Back to Login</button>
-    //               </div>
-    //       );
-    //  }
-
-    //  export default VenderForgetPassword;
+      

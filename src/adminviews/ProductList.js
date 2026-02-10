@@ -251,13 +251,13 @@
          let cname="";
 
          useEffect(() => {
-            axios.get("http://localhost:9876/product/showproduct").then((res) => {
+            axios.get("https://server-app-xite.onrender.com/product/showproduct").then((res) => {
                 setPList(res.data);
             }).catch((err) => {
                 alert(err);
             });
 
-            axios.get("http://localhost:9876/productcatg/showproductcatg").then((res) => {
+            axios.get("https://server-app-xite.onrender.com/productcatg/showproductcatg").then((res) => {
                 setPCatgList(res.data);
             }).catch((err) => {
                  alert(err);
@@ -266,7 +266,7 @@
 
                 // GET VENDER
 
-                axios.get("http://localhost:9876/vender/getvendercount").then((res) => {
+                axios.get("https://server-app-xite.onrender.com/vender/getvendercount").then((res) => {
                     setVList(res.data);
                 }).catch((err)=> {
                     alert(err);
@@ -276,7 +276,7 @@
                  const handleActiveButton=(evt) => {
                     let pid=parseInt(evt);
                     let status="Active";
-                    axios.put("http://localhost:9876/product/updateproductstatus/"+pid+"/"+status).then((res) => {
+                    axios.put("https://server-app-xite.onrender.com/product/updateproductstatus/"+pid+"/"+status).then((res) => {
                       alert("Product Status Updated");
                  }).catch((err) => {
                     alert(err);
@@ -286,7 +286,7 @@
                  const handleInactiveButton=(evt) =>{
                  let pid=parseInt(evt);
                     let status="Inactive";
-                    axios.put("http://localhost:9876/product/updateproductstatus/"+pid+"/"+status).then((res) => {
+                    axios.put("https://server-app-xite.onrender.com/product/updateproductstatus/"+pid+"/"+status).then((res) => {
                       alert("Product Status Updated");
                  }).catch((err) => {
                     alert(err);
@@ -316,7 +316,7 @@
                  const handleSearch=(evt)=>{
                     if(evt.target.value>0)
                     {
-                        axios.get("http://localhost:9876/product/showproductbycatgid/"+evt.target.value).then((res)=>{
+                        axios.get("https://server-app-xite.onrender.com/product/showproductbycatgid/"+evt.target.value).then((res)=>{
                             setPList(res.data);
                         }).catch((err)=>{
                             alert(err);
@@ -324,7 +324,7 @@
                     }
                     else
                     {
-                       axios.get("http://localhost:9876/product/showproduct").then((res)=>{
+                       axios.get("https://server-app-xite.onrender.com/product/showproduct").then((res)=>{
                             setPList(res.data);
                         }).catch((err)=>{
                             alert(err);
@@ -337,7 +337,7 @@
                  const handleSearchByVender=(evt) => {
                     if(evt.target.value>0)
                     {
-                        axios.get("http://localhost:9876/product/showproductbyvender/"+evt.target.value).then((res) => {
+                        axios.get("https://server-app-xite.onrender.com/product/showproductbyvender/"+evt.target.value).then((res) => {
                             setPList(res.data);
                         }).catch((err)=> {
                             alert(err);
@@ -345,7 +345,7 @@
                     }
                     else
                     {
-                         axios.get("http://localhost:9876/product/showproduct").then((res) => {
+                         axios.get("https://server-app-xite.onrender.com/product/showproduct").then((res) => {
                             setPList(res.data);
                         }).catch((err)=> {
                             alert(err);
@@ -357,7 +357,7 @@
                       const handleSearchByStatus=(evt) => {
                     if(evt.target.value!=="0")
                     {
-                        axios.get("http://localhost:9876/product/showproductstatus/"+evt.target.value).then((res) => {
+                        axios.get("https://server-app-xite.onrender.com/product/showproductstatus/"+evt.target.value).then((res) => {
                             setPList(res.data);
                         }).catch((err)=> {
                             alert(err);
@@ -365,7 +365,7 @@
                     }
                     else
                     {
-                         axios.get("http://localhost:9876/product/showproduct").then((res) => {
+                         axios.get("https://server-app-xite.onrender.com/product/showproduct").then((res) => {
                             setPList(res.data);
                         }).catch((err)=> {
                             alert(err);
@@ -445,7 +445,7 @@
                                     </td>
 
                               <td>
-                                <img src={"http://localhost:9876/product/getproductimage/"+item.ppicname} height="100" width="100"></img>
+                                <img src={"https://server-app-xite.onrender.com/product/getproductimage/"+item.ppicname} height="100" width="100"></img>
                                 </td>      
 
                                 <td>{item.status}</td>

@@ -38,7 +38,7 @@ export default function AdminVendorSales(){
     const[errorVenders, setErrorVenders]=useState("");
     const[errorSales, setErrorSales]=useState("");
 
-    const IMAGE_BASE_URL="http://localhost:9876/productimages/";
+    const IMAGE_BASE_URL="https://server-app-xite.onrender.com/productimages/";
 
     //===============================
     // FETCH VENDERS
@@ -47,7 +47,7 @@ export default function AdminVendorSales(){
         setErrorVenders("");
         setLoadingVenders(true);
         try{
-            const res=await axios.get("http://localhost:9876/vender/getvendercount");
+            const res=await axios.get("https://server-app-xite.onrender.com/vender/getvendercount");
             setVenderList(res.data || []);
         }catch(err){
             setErrorVenders("Unable to load vendors.");
@@ -68,7 +68,7 @@ export default function AdminVendorSales(){
         setLoadingSales(true);
 
         try{
-            const res=await axios.get(`http://localhost:9876/sales/vender/${selectedVender}`);
+            const res=await axios.get(`https://server-app-xite.onrender.com/sales/vender/${selectedVender}`);
             const data= res.data.sales?? [];
             setSales(Array.isArray(data) ? data: []);
             setSalesPage([1]);

@@ -26,7 +26,7 @@ function OrderTrackingPerBillId({BillId})
 
   const loadOrder = async (billid) => {
     try{
-      const res = await axios.get(`http://localhost:9876/bill/trackorder/${billid}`);
+      const res = await axios.get(`https://server-app-xite.onrender.com/bill/trackorder/${billid}`);
       setOrder(res.data);
     } catch(err)
     {

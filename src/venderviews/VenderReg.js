@@ -26,7 +26,7 @@
                                          
       const fetchVendorList = async()=>{
         try{
-            const res = await  axios.get("http://localhost:9876/vender/getvendercount/");
+            const res = await  axios.get("https://server-app-xite.onrender.com/vender/getvendercount/");
             setVenderList(res.data);
             setVId(res.data.length + 1);
         }
@@ -103,7 +103,7 @@
                     
                 };
 
-                axios.post("http://localhost:9876/vender/register",obj).then((res)=>{
+                axios.post("https://server-app-xite.onrender.com/vender/register",obj).then((res)=>{
              alert(res.data);
                fetchVendorList();
              }).catch((err)=>
@@ -119,7 +119,7 @@
 
                 try
                 {
-                    const response = await fetch("http://localhost:9876/vender/savevenderimage",{
+                    const response = await fetch("https://server-app-xite.onrender.com/vender/savevenderimage",{
                         method:"POST",
                         body : formData,
                  } );
@@ -217,185 +217,4 @@
   }
   export default VenderReg;
 
-            // return(
-
-//                  <div className="vend-container">
-//     <center>
-//         <div className="vend-box">
-
-//             <h2 className="vend-heading">VENDER REGISTRATION</h2>
-
-//             <p className="vend-status">{status}</p>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">VENDER ID</label>
-//                 <span className="vend-readonly">{vid}</span>
-//             </div>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">USER ID</label>
-//                 <input type="text" 
-//                        onChange={(e)=> setVUserId(e.target.value)}
-//                        className="vend-input" />
-//                 <span className="vend-error">{errors.vuserid}</span>
-//             </div>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">PASSWORD</label>
-//                 <input type="password" 
-//                        onChange={(e)=> setVUserPass(e.target.value)}
-//                        className="vend-input" />
-//                 <span className="vend-error">{errors.vuserpass}</span>
-//             </div>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">VENDER NAME</label>
-//                 <input type="text" 
-//                        onChange={(e)=> setVenderName(e.target.value)}
-//                        className="vend-input" />
-//                 <span className="vend-error">{errors.vendername}</span>
-//             </div>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">ADDRESS</label>
-//                 <input type="text"
-//                        onChange={(e)=> setVAddress(e.target.value)}
-//                        className="vend-input" />
-//                 <span className="vend-error">{errors.vaddress}</span>
-//             </div>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">CONTACT</label>
-//                 <input type="number"
-//                        onChange={(e)=> setVContact(e.target.value)}
-//                        className="vend-input" />
-//                 <span className="vend-error">{errors.vcontact}</span>
-//             </div>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">EMAIL</label>
-//                 <input type="email"
-//                        onChange={(e)=> setVEmail(e.target.value)}
-//                        className="vend-input" />
-//                 <span className="vend-error">{errors.vemail}</span>
-//             </div>
-
-//             <div className="vend-row">
-//                 <label className="vend-label">UPLOAD PHOTO</label>
-//                 <input type="file"
-//                        onChange={handleFileChange}
-//                        className="vend-input" />
-
-//                 {image.preview && (
-//                     <img src={image.preview}
-//                          className="vend-preview"
-//                          height={100}
-//                          width={100} />
-//                 )}
-
-//                 <span className="vend-error">{errors.vpicname}</span>
-
-//                 <button onClick={handleSubmit}
-//                         className="vend-btn vend-btn-danger">
-//                     UPLOAD
-//                 </button>
-//             </div>
-
-//             <div className="vend-actions">
-//                 <button onClick={handleRegisterButton}
-//                         className="vend-btn vend-btn-primary">
-//                     REGISTER
-//                 </button>
-//             </div>
-
-//         </div>
-//     </center>
-// </div>
-//             )
-//         };
-//         export default VenderReg;
-
-
-
-
-
-
-
-            //     <div className="venderrecontainer">
-            //         <center>
-            //             <div className="venderreg">
-            //             <h2 className="h2">VENDER REGISTRATION</h2>
-            //            <p className="veg.status">{status}</p>
-
-            //            <div className="vegform-group">
-            //             <label>VENDER ID</label>
-            //             <span className="readonlyveg">{vid}</span>
-            //            </div>
-
-            //            <div className="vegform-group">
-            //             <label>USER ID</label>
-            //             <input type="text" onChange={(e)=> setVUserId(e.target.value)}></input>
-            //             <span className="vegerror">{errors.vuserid}</span>
-            //            </div>
-
-            //              <div className="venform-group">
-            //             <label>PASSWORD</label>
-            //             <input type="password" onChange={(e)=> setVUserPass(e.target.value)}></input>
-            //             <span className="venerror">{errors.vuserpass}</span>
-            //            </div>
-
-            //              <div className="venform-group">
-            //             <label>VENDER NAMED</label>
-            //             <input type="text" onChange={(e)=> setVenderName(e.target.value)}></input>
-            //             <span className="venerror">{errors.vendername}</span>
-            //            </div>
-
-            //              <div className="venform-group">
-            //             <label>ADDRESS</label>
-            //             <input type="text" onChange={(e)=> setVAddress(e.target.value)}></input>
-            //             <span className="venerror">{errors.vaddress}</span>
-            //            </div>
-
-            //              <div className="venform-group">
-            //             <label>CONTACT</label>
-            //             <input type="number" onChange={(e)=> setVContact(e.target.value)}></input>
-            //             <span className="venerror">{errors.vcontact}</span>
-            //            </div>
-
-            //              <div className="venform-group">
-            //             <label>EMAIL</label>
-            //             <input type="email" onChange={(e)=> setVEmail(e.target.value)}></input>
-            //             <span className="venerror">{errors.vemail}</span>
-            //            </div>
-
-            //             <div className="venform-group">
-            //             <label>UPLOAD PHOTO</label>
-            //             <input type="file" onChange={handleFileChange} name="file"></input>
-            //              {image.preview && <img src= {image.preview} alt="preview" className="venpreview" height={100} width={100} />}
-            //              <span className="venerror">{errors.vpicname}</span>
-            //              <button onClick={handleSubmit} className="venbtn btn-danger mt-2">UPLOAD</button>
-            //            </div>
-
-            //             <div className="form-actions">
-            //                 <button onClick={handleRegisterButton} className="venbtn btn-primary">REGISTER</button>
-            //             </div>
-
-            //         </div>
-            //         </center>
-
-            //     </div>
-            // );
-            //  }
-   
-            //  export default VenderReg;
-
-
-
-
-
-
-
-
-
-
-
+     

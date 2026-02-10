@@ -27,7 +27,7 @@ import "./State.css";
     }
          
       const handleAddNewButton = ()=>{
-        axios.get("http://localhost:9876/state/getall").then((res)=>{
+        axios.get("https://server-app-xite.onrender.com/state/getall").then((res)=>{
             setStId(res.data.length+1);
             setStatus(1);
              }).catch((err)=>{
@@ -43,7 +43,7 @@ import "./State.css";
         }
         else
         {
-            axios.get("http://localhost:9876/state/searchbyname/"+stname).then((res)=>{
+            axios.get("https://server-app-xite.onrender.com/state/searchbyname/"+stname).then((res)=>{
                 if(res.data.stname!=undefined)
                 {
                     alert("STATE NAME ALREADY EXITS");
@@ -56,7 +56,7 @@ import "./State.css";
                         status:status
                     }
 
-                    axios.post("http://localhost:9876/state/save",obj).then((res)=>{
+                    axios.post("/https://server-app-xite.onrender.com/state/save",obj).then((res)=>{
                         alert(res.data);
                         setStId("");
                         setStName("");
@@ -72,7 +72,7 @@ import "./State.css";
       }
 
       const handleShowButton=()=>{
-        axios.get("http://localhost:9876/state/getall").then((res)=>{
+        axios.get("https://server-app-xite.onrender.com/state/getall").then((res)=>{
             setSList(res.data);
         }).catch((err)=>{
             alert(err);
@@ -82,7 +82,7 @@ import "./State.css";
        const handleSearchButton=()=>{
           if(stid!=undefined && stid!="")
           {
-            axios.get("http://localhost:9876/state/search/"+stid).then((res)=>{
+            axios.get("https://server-app-xite.onrender.com/state/search/"+stid).then((res)=>{
                 if(res.data.stid!=undefined)
                 {
                     setStId(res.data.stid);
@@ -112,7 +112,7 @@ import "./State.css";
                 stname:stname,
                 status:status
             }
-            axios.put("http://localhost:9876/state/update/",obj).then((res)=>{
+            axios.put("https://server-app-xite.onrender.com/state/update/",obj).then((res)=>{
                 alert(res.data);
                 setStId("");
                 setStName("");
@@ -126,7 +126,7 @@ import "./State.css";
        const handleDeleteButton=()=>{
         if(stid!=undefined&&stid!="")
         {
-            axios.delete("http://localhost:9876/state/delete/"+stid).then((res)=>{
+            axios.delete("https://server-app-xite.onrender.com/state/delete/"+stid).then((res)=>{
                 alert(res.data);
             }).catch((err)=>{
                 alert(err);

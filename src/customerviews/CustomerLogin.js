@@ -63,7 +63,7 @@ function CustomerLogin ()
 
         setAuthError(" ");    // RESET PREIVIOUS AUTH ERRORS
 
-        axios.post("http://localhost:9876/customer/login", {
+        axios.post("https://server-app-xite.onrender.com/customer/login", {
               CUserId : uid,
               CUserPass : upass,
         }).then((res) =>{
@@ -134,7 +134,7 @@ function CustomerLogin ()
             return;
         }
 
-        axios.post("http://localhost:9876/customer/forgotpassword/send-otp", {
+        axios.post("https://server-app-xite.onrender.com/customer/forgotpassword/send-otp", {
             CUserId : forgotEmail,
         }).then((res) =>{
             setForgotMessage(res.data.message || "OTP sent to your email.");
@@ -153,7 +153,7 @@ function CustomerLogin ()
             setForgotMessage("Please enter OTP and new password.");
             return;
         }
-        axios.post("http://localhost:9876/customer/forgotpassword/verify-otp",
+        axios.post("https://server-app-xite.onrender.com/customer/forgotpassword/verify-otp",
             {
                 CUserId: forgotEmail,
                 OTP:otp,

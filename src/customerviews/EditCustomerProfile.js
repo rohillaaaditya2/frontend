@@ -15,15 +15,15 @@ import"./EditCustomerProfile.css";
 
     // LOAD EXISTING CUSTOMER = STATE
     useEffect(() => {
-        axios.get(`http://localhost:9876/customer/getcustomerdetails/${user.Cid}`).then((res) => {
+        axios.get(`https://server-app-xite.onrender.com/customer/getcustomerdetails/${user.Cid}`).then((res) => {
             setFormData(res.data);
             if(res.data.StId)
             {
-                axios.get(`http://localhost:9876/city/showcitybystate/${res.data.StId}`).then((ctRes) => setCtList(ctRes.data));
+                axios.get(`https://server-app-xite.onrender.com/city/showcitybystate/${res.data.StId}`).then((ctRes) => setCtList(ctRes.data));
             }
         }).catch((err) => console.error(err));
 
-        axios.get("http://localhost:9876/state/show/").then((res) => setStList(res.data)).catch((err) => console.error(err));
+        axios.get("https://server-app-xite.onrender.com/state/show/").then((res) => setStList(res.data)).catch((err) => console.error(err));
     },[user.Cid])
 
     if(! formData) return <div>Loading...</div>;
@@ -40,7 +40,7 @@ import"./EditCustomerProfile.css";
         const stid =e.target.value;
         setFormData({...formData,StId: stid, CtId : ""});
 
-        axios.get(`http://localhost:9876/city/showcitybystate/${stid}`).then((res) => setCtList(res.data)).catch((err) => console.error(err));
+        axios.get(`https://server-app-xite.onrender.com/city/showcitybystate/${stid}`).then((res) => setCtList(res.data)).catch((err) => console.error(err));
     };
 
     // IMAGE SELECTION
@@ -81,7 +81,7 @@ import"./EditCustomerProfile.css";
             {
                 form.append("CPicName",newImage);
             }
-            const res =await axios.put(`http://localhost:9876/customer/update/${user.Cid}`,
+            const res =await axios.put(`https://server-app-xite.onrender.com/customer/update/${user.Cid}`,
                 form,{
                     headers: {"Content-Type" : "multipart/form-data"}
                 }
@@ -139,7 +139,7 @@ import"./EditCustomerProfile.css";
         {errors.CEmail && <p className="edit-profile-error">{errors.CEmail}</p>}
 
         <p className="edit-profile-label">Profile Image</p>
-        <img className="edit-profile-img" src={preview ? preview : `http://localhost:9876/customer/getimage/${formData.CPicName}`} alt="Customer" />
+        <img className="edit-profile-img" src={preview ? preview : `https://server-app-xite.onrender.com/customer/getimage/${formData.CPicName}`} alt="Customer" />
 
         <input className="edit-profile-file" type="file" onChange={handleFileChange} />
 

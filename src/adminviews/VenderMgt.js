@@ -20,7 +20,7 @@ function VenderMgt(){
     },[]);
 
     const fetchVenders=()=>{
-        axios.get(`http://localhost:9876/vender/getvendercount`)
+        axios.get(`https://server-app-xite.onrender.com/vender/getvendercount`)
         .then((res)=> setVenderList(res.data))
         .catch(err=> alert(err));
     };
@@ -35,7 +35,7 @@ function VenderMgt(){
             VPicName:null,
             previewImage:
                 vender.VPicName 
-                ? `http://localhost:9876/vender/getimage/${vender.VPicName}`
+                ? `https://server-app-xite.onrender.com/vender/getimage/${vender.VPicName}`
                 : ""
         });
         setShowModal(true);
@@ -77,7 +77,7 @@ function VenderMgt(){
         if(editForm.VPicName) formData.append("file", editForm.VPicName);
 
         axios.put(
-            `http://localhost:9876/vender/update/${selectedVender.VUserId}`,
+            `https://server-app-xite.onrender.com/vender/update/${selectedVender.VUserId}`,
             formData
         )
         .then(res=>{
@@ -92,7 +92,7 @@ function VenderMgt(){
 
         axios.put(
             // `http://localhost:9876/vender/updatestatus/${vid}/${status==="Active"?"Inactive":"Active"}`
-            `http://localhost:9876/vender/vendermanage/${vid}/${status==="Active"?"Inactive":"Active"}`
+            `https://server-app-xite.onrender.com/vender/vendermanage/${vid}/${status==="Active"?"Inactive":"Active"}`
         )
         .then(()=>{
             fetchVenders();
@@ -123,7 +123,7 @@ function VenderMgt(){
                             <td>
                                 {item.VPicName && (
                                 <img 
-                                  src={`http://localhost:9876/vender/getimage/${item.VPicName}`}
+                                  src={`https://server-app-xite.onrender.com/vender/getimage/${item.VPicName}`}
                                   alt="vendor" width="50"
                                 />
                                 )}

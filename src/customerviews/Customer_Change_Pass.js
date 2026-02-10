@@ -79,7 +79,7 @@
 
              try
              {
-                const res = await axios.post("http://localhost:9876/customer/changepassword", {
+                const res = await axios.post("https://server-app-xite.onrender.com/customer/changepassword", {
                       CUserId,
                       OldPassword:oldPassword,
                       NewPassword:newPassword,

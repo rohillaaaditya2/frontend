@@ -18,15 +18,15 @@ function ShowBills(){
     const billsPerPage= 3;
         
     useEffect(()=>{
-        axios.get("http://localhost:9876/customer/getcustomerlist").then((res)=> setCustList(res.data))
-        axios.get("http://localhost:9876/product/showproduct").then((res)=> setPList(res.data))
+        axios.get("https://server-app-xite.onrender.com/customer/getcustomerlist").then((res)=> setCustList(res.data))
+        axios.get("https://server-app-xite.onrender.com/product/showproduct").then((res)=> setPList(res.data))
         .catch((err)=> alert(err));
     },[]);
 
     const handleCustomerSelect=(evt)=>{
         const cid=evt.target.value;
         setSelectedCustomer(cid);
-        axios.get(`http://localhost:9876/bill/billshow/${cid}`).then((res)=>{
+        axios.get(`https://server-app-xite.onrender.com/bill/billshow/${cid}`).then((res)=>{
             const bills=res.data;
             const mergedBills=[];
             let totalSum=0;
@@ -128,7 +128,7 @@ function ShowBills(){
 
                 for(let i=0;i<bill.products.length;i++){
                     const prod=bill.products[i];
-                    const imgUrl=`http://localhost:9876/product/getproductimage/${prod.pic}`;
+                    const imgUrl=`https://server-app-xite.onrender.com/product/getproductimage/${prod.pic}`;
                     const base64Img=await getBase64Image(imgUrl);
                     if(base64Img) imageMap[i]=base64Img;
 
@@ -230,7 +230,7 @@ function ShowBills(){
                                             <td>{prod.price.toFixed(2)}</td>
                                             <td>{prod.subtotal.toFixed(2)}</td>
                                             <td>
-                                                <img src={`http://localhost:9876/product/getproductimage/${prod.pic}`}
+                                                <img src={`https://server-app-xite.onrender.com/product/getproductimage/${prod.pic}`}
                                                 height="80" width="80" alt={prod.pname}/> </td>
                                         </tr>
                                     ))}

@@ -34,14 +34,14 @@
         //  HANDLE PAGE LOAD EVENT OR THIS FUNCTION WILL EXECUTE AUTOMATICALLY AT THE LOADING TIME OF COMPONENTS
 
         useEffect(()=>{
-              axios.get("http://localhost:9876/state/show").then((res)=>{
+              axios.get("https://server-app-xite.onrender.com/state/show").then((res)=>{
                 setStList(res.data);
               }).catch((err)=>{
                 alert(err);
               });
         })
               const handleAddNewButton=()=>{
-                axios.get("http://localhost:9876/city/getall").then((res)=>{
+                axios.get("https://server-app-xite.onrender.com/city/getall").then((res)=>{
                     setCtId(res.data.length+1);
                     setStatus(1);
                 }).catch((err)=>{
@@ -55,7 +55,7 @@
                  return;   
                 }
                 else{
-                    axios.get("http://localhost:9876/city/searchbyname/"+ctname).then((res)=>{
+                    axios.get("https://server-app-xite.onrender.com/city/searchbyname/"+ctname).then((res)=>{
                         if(res.data.ctname!=undefined)
                         {
                             alert("CITY NAME ALLREADY EXIST");
@@ -68,7 +68,7 @@
                                 stid:stid,
                                 status:status
                             }
-                            axios.post("http://localhost:9876/city/save/",obj).then((res)=>{
+                            axios.post("https://server-app-xite.onrender.com/city/save/",obj).then((res)=>{
                                 alert(res.data);
                                 setCtId("");
                                 setCtName("");
@@ -85,7 +85,7 @@
                 }
 
                 const handleShowButton=()=>{
-                    axios.get("http://localhost:9876/city/getall/").then((res)=>{
+                    axios.get("https://server-app-xite.onrender.com/city/getall/").then((res)=>{
                         setCtList(res.data);
                     }).catch((err)=>{
                         alert(err);
@@ -95,7 +95,7 @@
                 const handleSearchButton=()=>{
                     if(ctid!=undefined&&ctid!="")
                     {
-                        axios.get("http://localhost:9876/city/search/"+ctid).then((res)=>{
+                        axios.get("https://server-app-xite.onrender.com/city/search/"+ctid).then((res)=>{
                             if(res.data.stid!=undefined)
                             {
                                 setCtId(res.data.ctid);
@@ -112,7 +112,7 @@
                     }
                     if(ctname!=undefined&&ctname!="")
                     {
-                      axios.get("http://localhost:9876/city/searchbyname/"+ctname).then((res)=>{
+                      axios.get("https://server-app-xite.onrender.com/city/searchbyname/"+ctname).then((res)=>{
                         if(res.data.stid!=undefined)
                         {
                             setCtId(res.data.ctid);
@@ -145,7 +145,7 @@
                             stid:stid,
                             status:status
                         }
-                        axios.put("http://localhost:9876/city/update/",obj).then((res)=>{
+                        axios.put("https://server-app-xite.onrender.com/city/update/",obj).then((res)=>{
                             alert(res.data);
                             setCtId("");
                             setCtName("");
@@ -160,7 +160,7 @@
                       const handleDeleteButton=()=>{
                         if(ctid!=undefined && ctid!="")
                         {
-                            axios.delete("http://localhost:9876/city/delete/"+ctid).then((res)=>{
+                            axios.delete("https://server-app-xite.onrender.com/city/delete/"+ctid).then((res)=>{
                                 alert(res.data);
                             }).catch((err)=>{
                                 alert(err);

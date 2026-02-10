@@ -27,9 +27,9 @@
      useEffect(() => {
         setLoading(true);
 
-        Promise.all([axios.get(`http://localhost:9876/bill/billshowbillids/${props.data}`),
-            axios.get("http://localhost:9876/product/showproduct"),
-            axios.get(`http://localhost:9876/bill/billshowbilldates/${props.data}`),
+        Promise.all([axios.get(`https://server-app-xite.onrender.com/bill/billshowbillids/${props.data}`),
+            axios.get("https://server-app-xite.onrender.com/product/showproduct"),
+            axios.get(`https://server-app-xite.onrender.com/bill/billshowbilldates/${props.data}`),
         ]).then(([billRes,prodRes, dateRes]) => {
              setBillIdList(billRes.data);
              setPlist(prodRes.data);
@@ -50,7 +50,7 @@
 
         try
         {
-            const res = await axios.get(`http://localhost:9876/bill/showbillbyid/${selectedId}`);
+            const res = await axios.get(`https://server-app-xite.onrender.com/bill/showbillbyid/${selectedId}`);
             setBillDetailsList(res.data);
         } catch(err)
         {
@@ -68,7 +68,7 @@
 
 
         try{
-     const res = await axios.get(`http://localhost:9876/bill/showbillbydate/${selectDate}`);
+     const res = await axios.get(`https://server-app-xite.onrender.com/bill/showbillbydate/${selectDate}`);
             
     setBillDetailsList(res.data);
         } catch(err)
@@ -81,7 +81,7 @@
 
           const fetchCustomerDetails = async () => {
             try{
-         const res = await axios.get( `http://localhost:9876/customer/getcustomerdetails/${props.data}`);
+         const res = await axios.get( `https://server-app-xite.onrender.com/customer/getcustomerdetails/${props.data}`);
 
                     setCustDetails(res.data);
                     return res.data;
@@ -191,7 +191,7 @@
 
                     if(item.ppicname)
                     {
-                        const imgUrl = `http://localhost:9876/product/getproductimage/${item.ppicname}`;
+                        const imgUrl = `https://server-app-xite.onrender.com/product/getproductimage/${item.ppicname}`;
                         const base64Img = await toDataURL(imgUrl);
                         doc.addImage(base64Img, "JPEG", 160, y -6 , 20 ,20);
                     }
@@ -329,7 +329,7 @@
                                     <td>{bitem.amount}</td>
                                     <td>
                                         <img
-                                            src={`http://localhost:9876/product/getproductimage/${bitem.ppicname}`}
+                                            src={`https://server-app-xite.onrender.com/product/getproductimage/${bitem.ppicname}`}
                                             height="80"
                                             width="80"
                                             alt="product"

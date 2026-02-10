@@ -25,7 +25,7 @@
 
        useEffect(()=>{
          getNewPid();
-         axios.get("http://localhost:9876/productcatg/showproductcatg")
+         axios.get("https://server-app-xite.onrender.com/productcatg/showproductcatg")
          .then(res => setPCatgList(res.data)).catch(err => alert(err));
        },[]);
 
@@ -34,7 +34,7 @@
        const fetchProducts  = () =>{
         if(venderid)
         {
-        axios.get(`http://localhost:9876/product/showproductbyvender/${venderid}`)
+        axios.get(`https://server-app-xite.onrender.com/product/showproductbyvender/${venderid}`)
         .then(res => setPList(res.data))
         .catch(err => alert(err));    
         }
@@ -47,7 +47,7 @@
          // GET NEW PRODUCT ID
 
          const getNewPid = () =>{
-            axios.get("http://localhost:9876/product/getmaxpid")
+            axios.get("https://server-app-xite.onrender.com/product/getmaxpid")
             .then(res => setPId(res.data.length + 1))
             .catch(err => alert(err));
          };
@@ -75,7 +75,7 @@
             formData.append("file",image.data);
 
             try{
-                const response = await fetch("http://localhost:9876/product/saveproductimage", {
+                const response = await fetch("https://server-app-xite.onrender.com/product/saveproductimage", {
                     method:"POST" , body: formData
                 });
 
@@ -91,7 +91,7 @@
 
     if(isEditing)
     {
-        axios.put(`http://localhost:9876/product/updateproduct/${pid}`,obj)
+        axios.put(`https://server-app-xite.onrender.com/product/updateproduct/${pid}`,obj)
         .then(() => {
             alert("PRODUCT UPDATED");
             fetchProducts();
@@ -101,7 +101,7 @@
     }
     else
     {
-        axios.post("http://localhost:9876/product/saveproduct/",obj)
+        axios.post("https://server-app-xite.onrender.com/product/saveproduct/",obj)
         .then(() => {
             alert("PRODUCT SAVED");
             fetchProducts();
@@ -147,7 +147,7 @@
             setOPrice(item.oprice);
             setPPicName(item.ppicname); 
             setPCatgId(item.pcatgid);
-            setImage({preview: `http://localhost:9876/getimageproduct/${item.ppicname}`,data:""})
+            setImage({preview: `https://server-app-xite.onrender.com/getimageproduct/${item.ppicname}`,data:""})
           setIsEditing(true);
           };
 
@@ -156,7 +156,7 @@
            const handleDelete=(pid)=>{
             if(!window.confirm("DELETE THIS PRODUCT?")) return;
 
-            axios.put(`http://localhost:9876/product/updateproductstatus/${pid}/Inactive`)
+            axios.put(`https://server-app-xite.onrender.com/product/updateproductstatus/${pid}/Inactive`)
             .then(() => { alert("PRODUCT DELETED"); fetchProducts(); })
             .catch(err => alert(err));
            };
@@ -249,7 +249,7 @@
               <td>{pcatglist.find(c => c.pcatgid === item.pcatgid)?.pcatgname || "N/A"}</td>
               <td>
                 <img 
-                  src={`http://localhost:9876/product/getproductimage/${item.ppicname}`} 
+                  src={`https://server-app-xite.onrender.com+/product/getproductimage/${item.ppicname}`} 
                   alt={item.pname} 
                   className="prod-img" 
                 />

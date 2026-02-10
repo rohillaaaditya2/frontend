@@ -21,27 +21,27 @@ function CustomerMgt(){
         open:false,
         cid:null,
         currentStatus:"",
-    });
+    })
     const[loading,setLoading]=useState(false); 
 
     useEffect(()=>{
-        axios.get(`http://localhost:9876/customer/getcustomercount`)
+        axios.get(`https://server-app-xite.onrender.com/customer/getcustomercount`)
         .then((res)=>setCustomerList(res.data))
         .catch((err)=> console.error(err));
 
-        axios.get(`http://localhost:9876/state/show`)
+        axios.get(`https://server-app-xite.onrender.com/state/show`)
         .then((res)=> setStates(res.data))
         .catch((err)=> console.error(err));
     },[]);
 
     const handleViewProfile=(cid)=>{
-        axios.get(`http://localhost:9876/customer/getcustomerdetails/${cid}`)
+        axios.get(`https://server-app-xite.onrender.com/customer/getcustomerdetails/${cid}`)
         .then((res)=>{
             setSelectedCustomer(res.data);
             setFormData(res.data);
             setPreviewImage(
                 res.data.CPicName 
-                ? `http://localhost:9876/customer/getimage/${res.data.CPicName}`
+                ? `https://server-app-xite.onrender.com/customer/getimage/${res.data.CPicName}`
                 : null
             );
 
@@ -51,7 +51,7 @@ function CustomerMgt(){
     };
 
     const fetchCitiesByState=(stid)=>{
-        axios.get(`http://localhost:9876/city/showcitybystate/${stid}`)
+        axios.get(`https://server-app-xite.onrender.com/city/showcitybystate/${stid}`)
         .then((res)=> setCities(res.data))
         .catch((err)=> console.error(err));
     };
@@ -89,7 +89,7 @@ function CustomerMgt(){
         try{
             setLoading(true);
             const res=await axios.put(
-                `http://localhost:9876/customer/update/${selectedCustomer.Cid}`,
+                `https://server-app-xite.onrender.com/customer/update/${selectedCustomer.Cid}`,
                 data, {headers:{"Content-Type":"multipart/form-data"}}
             );
             alert("Profile updated Successfully!");
@@ -117,11 +117,11 @@ function CustomerMgt(){
         setCustomerList((prev)=>
         prev.map((c)=> (c.Cid===cid ? {...c, Status: newStatus} : c)));
 
-        axios.get(`http://localhost:9876/customer/getcustomerdetails/${cid}`)
+        axios.get(`https://server-app-xite.onrender.com/customer/getcustomerdetails/${cid}`)
         .then((res)=>{
             const email=res.data.CEmail;
 
-            axios.put(`http://localhost:9876/customer/customermanage/${cid}/${newStatus}`)
+            axios.put(`https://server-app-xite.onrender.com/customer/customermanage/${cid}/${newStatus}`)
             .then(()=>{
                 const subject= newStatus==="Active" ? "Login Activation" : "Login Deactivation";
                 const message=newStatus==="Active" ? 
@@ -129,7 +129,7 @@ function CustomerMgt(){
                 : "Your ID is deactivated by Admin.You can not Login.";
 
                 axios.post(
-                    `http://localhost:9876/emailactivation/sendemails/${email}/${subject}/${message}`
+                    `https://server-app-xite.onrender.com/emailactivation/sendemails/${email}/${subject}/${message}`
                 ).catch((err)=>console.error(err));
 
                 // axios.post("http://localhost:9876/emailactivation/send",{ email: message, subject: "Login Activation",  message: "Your ID is activated by Admin. You can login now."});

@@ -40,7 +40,7 @@ Chartjs.register(BarElement,CategoryScale,LinearScale,Tooltip,Legend);
             try
             {
                 const res = await axios.get(
-                    `http://localhost:9876/sales/vender/${vender.Vid}`
+                    `https://server-app-xite.onrender.com/sales/vender/${vender.Vid}`
                     // `http://localhost:9876/sales/vender/${vender.Vid}`
                 );
                 setSales(res.data.sales || []);
@@ -301,7 +301,7 @@ Chartjs.register(BarElement,CategoryScale,LinearScale,Tooltip,Legend);
                                             <td>{s.totalPrice}</td>
 
                                             <td>
-                                                <img src={`http://localhost:9876/product/getproductimage/${s.product?.ppicname || "default.png"}`} alt={s.product?.pname} style={{height:"45px",width:"45px",objectFit:"cover",borderRadius:"6px"}}></img>
+                                                <img src={`https://server-app-xite.onrender.com/product/getproductimage/${s.product?.ppicname || "default.png"}`} alt={s.product?.pname} style={{height:"45px",width:"45px",objectFit:"cover",borderRadius:"6px"}}></img>
                                             </td>
                                         </tr>
                                     ))}
@@ -344,7 +344,7 @@ Chartjs.register(BarElement,CategoryScale,LinearScale,Tooltip,Legend);
                                         >
 
                                             <td>
-                                    <img src={`http://localhost:9876/product/getproductimage/${product?.ppicname || "default.png"}`} alt={p} style={{height:"45px",width:"45px",objectFit:"cover",borderRadius:"6px"}}></img>            
+                                    <img src={`https://server-app-xite.onrender.com/product/getproductimage/${product?.ppicname || "default.png"}`} alt={p} style={{height:"45px",width:"45px",objectFit:"cover",borderRadius:"6px"}}></img>            
                                             </td>
 
                                             <td>{p}</td>
@@ -387,7 +387,7 @@ Chartjs.register(BarElement,CategoryScale,LinearScale,Tooltip,Legend);
                                     return (
                                         <>
                                         <div className="venderpopupheader">
-                                            <img src={`http://localhost:9876/product/getproductimage/${product?.ppicname || "default.png"}`} alt={selectedProduct}
+                                            <img src={`https://server-app-xite.onrender.com/product/getproductimage/${product?.ppicname || "default.png"}`} alt={selectedProduct}
                                             style={{
                                                 width:"70px",
                                                 height:"70px",

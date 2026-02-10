@@ -25,7 +25,7 @@ import "./UpdateOrderStatus.css";
       // LOAD ALL BILL IDS
 
       useEffect(() => {
-         axios.get("http://localhost:9876/bill/allbillids").then((res) => setBillIds(res.data)).catch((err) => console.log(err));
+         axios.get("https://server-app-xite.onrender.com/bill/allbillids").then((res) => setBillIds(res.data)).catch((err) => console.log(err));
       },[]);
 
       // LOAD CURRENT STATUS
@@ -33,7 +33,7 @@ import "./UpdateOrderStatus.css";
       const loadCurrentStatus = () => {
           if(billid)
           {
-            axios.get(`http://localhost:9876/bill/getstatus/${billid}`).then((res) => {
+            axios.get(`https://server-app-xite.onrender.com/bill/getstatus/${billid}`).then((res) => {
                 console.log("res data",res.data.status);
                 setCurrentStatus(res.data.status);
                 setUpdatedAt(res.data.updatedAt);
@@ -60,7 +60,7 @@ import "./UpdateOrderStatus.css";
 
         if(!window.confirm(`Confirm update status to ":${status}" ?`)) return;
 
-        await axios.put("http://localhost:9876/bill/updatestatus", {
+        await axios.put("https://server-app-xite.onrender.com/bill/updatestatus", {
             billid,
             status,
             updatedBy:updateByName
