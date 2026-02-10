@@ -116,7 +116,6 @@
 }
 
 /* ================= POPUP OVERLAY ================= */
-.popup=overlay,
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -126,6 +125,7 @@
   align-items: center;
   z-index: 9999;
 }
+
 
 /* ================= POPUP CONTENT ================= */
 .popup-content {
