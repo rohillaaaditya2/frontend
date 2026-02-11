@@ -20,13 +20,13 @@ function BillByID(props) {
 
     Promise.all([
       axios.get(
-        `https://server-app-xite.onrender.com/bill/billshowbillids/${props.data}`
+        `${url}/bill/billshowbillids/${props.data}`
       ),
       axios.get(
-        "https://server-app-xite.onrender.com/product/showproduct"
+        `${url}/product/showproduct`
       ),
       axios.get(
-        `https://server-app-xite.onrender.com/bill/billshowbilldates/${props.data}`
+        `${url}/bill/billshowbilldates/${props.data}`
       ),
     ])
       .then(([billRes, prodRes, dateRes]) => {
@@ -46,7 +46,7 @@ function BillByID(props) {
 
     try {
       const res = await axios.get(
-        `https://server-app-xite.onrender.com/bill/showbillbyid/${selectedId}`
+       `${url}/bill/showbillbyid/${selectedId}`
       );
       setBillDetailsList(res.data);
     } catch (err) {
@@ -62,7 +62,7 @@ function BillByID(props) {
 
     try {
       const res = await axios.get(
-        `https://server-app-xite.onrender.com/bill/showbillbydate/${selectDate}`
+        `${url}/bill/showbillbydate/${selectDate}`
       );
       setBillDetailsList(res.data);
     } catch (err) {
@@ -73,7 +73,7 @@ function BillByID(props) {
   const fetchCustomerDetails = async () => {
     try {
       const res = await axios.get(
-        `https://server-app-xite.onrender.com/customer/getcustomerdetails/${props.data}`
+        `${url}/customer/getcustomerdetails/${props.data}`
       );
       setCustDetails(res.data);
       return res.data;

@@ -23,14 +23,14 @@
      
 
         useEffect(() =>{
-            axios.get("https://server-app-xite.onrender.com/customer/getcustomercount").then((res)=> setCId(res.data.length+1)).catch((err) => alert(err));
+            axios.get(`${url}/customer/getcustomercount`).then((res)=> setCId(res.data.length+1)).catch((err) => alert(err));
 
-            axios.get("https://server-app-xite.onrender.com/state/show").then((res)=> setSList(res.data)).catch((err) => alert(err));
+            axios.get(`${url}/state/show`).then((res)=> setSList(res.data)).catch((err) => alert(err));
         },[]);
 
         const handleStIdSelect = (evt) =>{
             setStId(evt.target.value);
-            axios.get("https://server-app-xite.onrender.com/city/showcitybystate/"+evt.target.value).then((res)=> setCtList(res.data)).catch((err)=> alert(err));
+            axios.get(`${url}/city/showcitybystate/`+evt.target.value).then((res)=> setCtList(res.data)).catch((err)=> alert(err));
         }
 
         const validateForm = () =>{
@@ -107,7 +107,7 @@
                 
                 let formData = new FormData();
                 formData.append('file', image.data);
-               const res= await fetch("https://server-app-xite.onrender.com/customer/savecustomerimage",{
+               const res= await fetch(`${url}/customer/savecustomerimage`,{
                 method:"POST",
                 body:formData,
                });
@@ -122,7 +122,7 @@
                         setStatus("Failed to Uploaded File");
                     }
 
-                    axios.post("https://server-app-xite.onrender.com/customer/register",obj).then((res)=> {
+                    axios.post(`${url}/customer/register`,obj).then((res)=> {
                         alert(res.data.Message);
                     }).catch((err) =>{
                         if(err.response && err.response.data && err.response.data.Message)
@@ -242,100 +242,4 @@
     
     
     
-    
-    //    return(
-        //     <div className="customerreg-container">
-        //         <center>
-        //         <div className="customerreg-form">
-        //             <h2 className="header">CUSTOMER REGISTRATION</h2>
-        //             <p className="status">{status}</p>
-        //             <form onSubmit={handleRegisterButton}>
-        //                 <div className="form-group">
-        //                     <label className="lableid">Customer ID</label>
-        //                       <span className="readonly">{cid}</span>
-        //                 </div>
-
-        //                 <div className="form-group">
-        //                     <label className="lableuid">User ID</label>
-        //                       <input type="text" onChange={(e) => setCUserId(e.target.value)}></input>
-        //                       <span className="error">{errors.cuserid}</span>
-        //                 </div>
-
-        //                 <div className="form-group">
-        //                     <label className="lablepass">Password</label>
-        //                     <input type="password" onChange={(e) => setCUserPass(e.target.value)}></input>
-        //                     <span className="error">{errors.cuserpass}</span>
-        //                 </div>
-
-        //                  <div className="form-group">
-        //                     <label className="lablecname">Customer Name</label>
-        //                     <input type="text" onChange={(e) => setCustomerName(e.target.value)}></input>
-        //                     <span className="error">{errors.customername}</span>
-        //                 </div>
-
-        //                  <div className="form-group">
-        //                     <label className="lablestate">State</label>
-        //                     <select onChange={handleStIdSelect}>
-        //                         <option value="">--Select State--</option>
-        //                         {
-        //                             slist.map((items) => (
-        //                                 <option key={items.stid} value={items.stid}>{items.stname}</option>
-        //                             ))
-        //                         }
-        //                     </select>
-        //                     <span className="error">{errors.stid}</span>
-        //                 </div>
-
-        //                    <div className="form-group">
-        //                        <label className="lablecity">City</label>
-        //                        <select onChange={(e) => setCtId(e.target.value)}>
-        //                         <option value="">--Select City--</option>
-        //                         {
-        //                             ctlist.map((items) => (
-        //                                <option key={items.ctid} value={items.ctid}>{items.ctname}</option>
-        //                             ))
-        //                         }
-        //                        </select>
-        //                        <span className="error">{errors.ctid}</span>
-        //                    </div>
-
-        //                    <div className="form-group">
-        //                       <label className="lableadd">Address</label>
-        //                       <input type="text" onChange={(e) => setCAddress(e.target.value)}></input>
-        //                       <span className="error">{errors.caddress}</span>
-        //                    </div>
-
-        //                    <div className="form-group">
-        //                          <label className="lablecon">Contact</label>
-        //                          <input type="number" onChange={(e) => setCContact(e.target.value)}></input>
-        //                          <span className="error">{errors.ccontact}</span>
-        //                    </div>
-
-        //                    <div className="form-group">
-        //                      <label className="lableemail">Email</label>
-        //                      <input type="email" onChange={(e) => setCEmail(e.target.value)}></input>
-        //                      <span className="error">{errors.cemail}</span>
-        //                    </div>
-
-        //                    <div className="form-group">
-        //                        <label className="lablesphoto">Select Photo</label>
-        //                        <input type="file" name="file" onChange={handleFileChange}></input>
-        //                        {image.preview && <img src={image.preview} width="100" height="100" alt="preview" />}
-        //                        <span className="error">{errors.cpicname}</span>
-        //                    </div>
-
-        //                    <div className="form-actions">
-        //                  <button type="submit" className="btn">REGISTER</button>
-        //                    </div>
-
-        //             </form>
-        //           </div>
-        //           </center>
-        //          </div>
-        //    );
-        // }
-        // export default CustomerReg;
-
-          
-
-
+   

@@ -8,13 +8,15 @@ function ProductCatMgt(){
     const[pcatgname, setPCatgName]= useState("");
     const[pcatgList,setPCatgList] = useState([]);
     const[isEditMode,setIsEditMode]= useState(false);
+    const url=process.env.REACT_APP_API_URL;
+
 
     useEffect(() => {
         fetchCategoryList();
     }, []);
 
     const fetchCategoryList = () =>{
-        axios.get("https://server-app-xite.onrender.com/productcatg/showproductcatg")
+        axios.get(`${url}/productcatg/showproductcatg`)
         .then((res) => {
             setPCatgList(res.data);
             if(!isEditMode){
@@ -28,7 +30,7 @@ function ProductCatMgt(){
             return;
         }
 
-        axios.post(`https://server-app-xite.onrender.com/productcatg/addproductcatg/${pcatgid}/${pcatgname}`)
+        axios.post(`${url}/productcatg/addproductcatg/${pcatgid}/${pcatgname}`)
         .then((res) => {
             alert(res.data);
             setPCatgName("");
@@ -43,7 +45,7 @@ function ProductCatMgt(){
             alert("categort name cannot be empty.");
             return;
         }
-        axios.put(`https://server-app-xite.onrender.com/productcatg/updateproductcatg/${pcatgid}/${pcatgname}`)
+        axios.put(`${url}/productcatg/updateproductcatg/${pcatgid}/${pcatgname}`)
         .then((res) =>{
             alert(res.data);
             setPCatgName("");

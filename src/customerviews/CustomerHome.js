@@ -63,7 +63,7 @@ function CustomerHome() {
       <aside className="ch-sidebar">
         <div className="ch-user-box">
           <img
-            src={`https://server-app-xite.onrender.com/customer/getimage/${user.Cpicname}`}
+            src={`${url}/customer/getimage/${user.Cpicname}`}
             alt="Customer"
           />
           <h4>{user.cfname}</h4>

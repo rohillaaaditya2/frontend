@@ -20,7 +20,7 @@ function Product({ data }) {
   useEffect(() => {
     getNewPid();
     axios
-      .get("https://server-app-xite.onrender.com/productcatg/showproductcatg")
+      .get(`${url}/productcatg/showproductcatg`)
       .then((res) => setPCatgList(res.data))
       .catch((err) => alert(err));
   }, []);
@@ -30,7 +30,7 @@ function Product({ data }) {
     if (venderid) {
       axios
         .get(
-          `https://server-app-xite.onrender.com/product/showproductbyvender/${venderid}`
+          `${url}/product/showproductbyvender/${venderid}`
         )
         .then((res) => setPList(res.data))
         .catch((err) => alert(err));
@@ -44,7 +44,7 @@ function Product({ data }) {
   // GET NEW PRODUCT ID
   const getNewPid = () => {
     axios
-      .get("https://server-app-xite.onrender.com/product/getmaxpid")
+      .get(`${url}/product/getmaxpid`)
       .then((res) => setPId(res.data.length + 1))
       .catch((err) => alert(err));
   };
@@ -79,14 +79,14 @@ function Product({ data }) {
     try {
       if (isEditing) {
         await axios.put(
-          `https://server-app-xite.onrender.com/product/updateproduct/${pid}`,
+          `${url}/product/updateproduct/${pid}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
         alert("PRODUCT UPDATED");
       } else {
         await axios.post(
-          "https://server-app-xite.onrender.com/product/saveproduct",
+          `${url}/product/saveproduct`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -133,7 +133,7 @@ function Product({ data }) {
 
     axios
       .put(
-        `https://server-app-xite.onrender.com/product/updateproductstatus/${pid}/Inactive`
+        `${url}/product/updateproductstatus/${pid}/Inactive`
       )
       .then(() => {
         alert("PRODUCT DELETED");

@@ -63,7 +63,7 @@ function CustomerLogin ()
 
         setAuthError(" ");    // RESET PREIVIOUS AUTH ERRORS
 
-        axios.post("https://server-app-xite.onrender.com/customer/login", {
+        axios.post(`${url}/customer/login`, {
               CUserId : uid,
               CUserPass : upass,
         }).then((res) =>{
@@ -134,7 +134,7 @@ function CustomerLogin ()
             return;
         }
 
-        axios.post("https://server-app-xite.onrender.com/customer/forgotpassword/send-otp", {
+        axios.post(`${url}/customer/forgotpassword/send-otp`, {
             CUserId : forgotEmail,
         }).then((res) =>{
             setForgotMessage(res.data.message || "OTP sent to your email.");
@@ -153,7 +153,7 @@ function CustomerLogin ()
             setForgotMessage("Please enter OTP and new password.");
             return;
         }
-        axios.post("https://server-app-xite.onrender.com/customer/forgotpassword/verify-otp",
+        axios.post(`${url}/customer/forgotpassword/verify-otp`,
             {
                 CUserId: forgotEmail,
                 OTP:otp,
@@ -257,64 +257,3 @@ function CustomerLogin ()
 }
   export default CustomerLogin;
 
-
-    //     return(
-    //         <div className="customerlogin-container">
-    //             <center>
-    //             <div className="customerlogin-form">
-    //                { !showForgot ? (
-    //                   <>
-                      
-    //                   <h4>Customer Login</h4>
-    //                   <input type="text" placeholder="Customer ID" value={uid} onChange={(e) => setUId(e.target.value)} ></input>
-    //                     <span className="error">{errors.cuserid}</span>
-                      
-    //                   <input type="password" placeholder="Password" value={upass} onChange={(e)=> setUPass(e.target.value)}></input>
-    //                   <span className="error">{errors.cuserpass}</span>
-    //                   {authError && <p className="error">{authError}</p>}
-
-    //                   <div className="remember-me">
-    //                     <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)}></input>
-    //                      <span>Remember Me</span>
-    //                   </div>
-
-    //                   <button className="customer-login-button" onClick={handleLogin}>Login</button>
-
-    //                   <p className="forgot-password-link" onClick={() => setShowForgot(true)}>Forgot Password</p>
-    //                   </>
-                      
-    //                     ) : (
-
-    //                         <>
-    //                          <h4>Forgot Password</h4>
-    //                          {forgotStep === 1 ? (
-    //                             <>
-    //            <input type="text" placeholder="Enter Customer ID" value={forgotEmail} onChange={(e) => setForgotEmail(e.target.value)}></input>
-    //           <button className="customerlogin-button" onClick={handleSendOtp}>Send OTP</button>
-                                  
-    //                             </>  
-    //                          ) : (
-    //                             <>
-    //      <input type="text" placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)}></input>
-    //      <input type="password" placeholder="Enter New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)}></input>
-    //      <button className="customerlogin-button" onClick={handleResetPassword}>Reset Password</button>
-                            
-    //                         </>
-    //                         )}
-
-    //             {forgotMessage && <p style={{color:"green"}}>{forgotMessage}</p>} 
-    //                    <p className="Backlogin" onClick={() =>{
-    //                       setShowForgot(false);
-    //                       setForgotStep(1);
-    //                       setForgotMessage("");
-    //                       setOtp('');
-    //                       setNewPassword("");
-    //                    }}>Back To Login</p>           
-    //                         </>
-    //                )}
-    //             </div>
-    //             </center>
-    //         </div>
-    //     );
-    // }
-    // export default CustomerLogin;

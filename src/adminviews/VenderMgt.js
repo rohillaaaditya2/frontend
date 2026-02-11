@@ -14,6 +14,8 @@ function VenderMgt() {
     file: null,
     previewImage: "",
   });
+  const url=process.env.REACT_APP_API_URL;
+
 
   useEffect(() => {
     fetchVenders();
@@ -22,7 +24,7 @@ function VenderMgt() {
   const fetchVenders = () => {
     axios
       .get(
-        "https://server-app-xite.onrender.com/vender/getvendercount"
+        `${url}/vender/getvendercount`
       )
       .then((res) => setVenderList(res.data))
       .catch((err) => alert(err));
@@ -61,6 +63,7 @@ function VenderMgt() {
     formData.append("VAddress", editForm.VAddress);
     formData.append("VContact", editForm.VContact);
     formData.append("VEmail", editForm.VEmail);
+    
 
     if (editForm.file) {
       formData.append("file", editForm.file); // NEW
@@ -68,7 +71,7 @@ function VenderMgt() {
 
     axios
       .put(
-        `https://server-app-xite.onrender.com/vender/update/${selectedVender.VUserId}`,
+        `${url}/vender/update/${selectedVender.VUserId}`,
         formData
       )
       .then((res) => {
@@ -82,7 +85,7 @@ function VenderMgt() {
   const toggleStatus = (vid, status) => {
     axios
       .put(
-        `https://server-app-xite.onrender.com/vender/vendermanage/${vid}/${
+        `${url}/vender/vendermanage/${vid}/${
           status === "Active" ? "Inactive" : "Active"
         }`
       )

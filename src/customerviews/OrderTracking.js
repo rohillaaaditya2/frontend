@@ -25,14 +25,14 @@ function OrderTracking({CUserId})
      useEffect(() => {
         if(cid)
         {
-            axios.get(`https://server-app-xite.onrender.com/bill/billshowbillids/${cid}`).then((res) => setBillIds(res.data)).catch((err) => console.log(err));
+            axios.get(`${url}/bill/billshowbillids/${cid}`).then((res) => setBillIds(res.data)).catch((err) => console.log(err));
         }
      },[cid]);
 
      // LOAD FULL ORDER DETAILS
 
      const loadOrder = async (billid) => {
-        const res = await axios.get(`https://server-app-xite.onrender.com/bill/trackorder/${billid}`);
+        const res = await axios.get(`${url}/bill/trackorder/${billid}`);
 
         setOrder(res.data);
      };

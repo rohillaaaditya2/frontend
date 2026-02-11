@@ -29,7 +29,7 @@
                 setLoading(true);
 
                 try{
-                    const res = await axios.post("https://server-app-xite.onrender.com/customer/login", 
+                    const res = await axios.post(`${url}/customer/login`, 
                         {
                             CUserId : uid,
                             CUserPass : upass,
@@ -119,44 +119,3 @@
          }
          export default CustomerLoginPopup;
 
-
-        //      return(
-        //         <div className="login-1">
-        //             <div className="login2">
-        //                 <span className="loginclose" onClick={onClose}>*</span>
-        //                 <h4>Customer Login</h4>
-                       
-        //                 <input type="text" placeholder="User ID" value={uid} onChange={(e) => setUId(e.target.value)}></input>
-
-        //                 <input type="password" placeholder="Password" value={upass} onChange={(e) => setUPass(e.target.value)}></input>
-                    
-        //                 <div className="remember ">
-        //                      <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)}></input>
-        //                      <span>Remember ME</span>
-        //                 </div>
-        //                 {authError && <p className="error">{authError}</p>}
-
-        //                 <button onClick={handleLoginButton} disabled={loading} style={{position : "relative", paddingLeft:loading ? "35px" : "12px"}}>
-
-        //                    {loading && (
-        //                     <span style={{position: "absolute",left:"10px",top:"50%",transform:"translateY(-50)",width:"16px",height:"16px",border:"2px solid #fff",borderTop:"2px solid transparent",borderRadius:"50%",animation:"spin 1s linear infinite"}}>
-                                  
-        //                     </span>
-        //                    )}
-        //                    {loading ? "Logging in..." : "Login"}
-
-        //                 </button>
-        //             </div>
-
-        //              {/* SPINNER ANIMATION */}
-
-        //              <style>
-        //                 {`@keyframes spin {
-        //                  0% {transform : translateY(-50%) rotate(0deg);}
-        //                  100% {transform : tanslateY(-50) rotate(360deg) : }}`}
-        //              </style>
-        //         </div>
-        //      );
-        //  }
-          
-        //  export default CustomerLoginPopup;

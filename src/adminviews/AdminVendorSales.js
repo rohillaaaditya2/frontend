@@ -28,11 +28,12 @@ export default function AdminVendorSales() {
   const chartRef = useRef(null);
   const [venderlist, setVenderList] = useState([]);
   const [selectedVender, setSelectedVender] = useState("");
+    const url=process.env.REACT_APP_API_URL;
 
   //================ FETCH VENDERS =================
   useEffect(() => {
     axios
-      .get("https://server-app-xite.onrender.com/vender/getvendercount")
+      .get(`${url}/vender/getvendercount`)
       .then((res) => setVenderList(res.data || []))
       .catch(() => alert("Unable to load vendors"));
   }, []);
@@ -43,7 +44,7 @@ export default function AdminVendorSales() {
 
     axios
       .get(
-        `https://server-app-xite.onrender.com/sales/vender/${selectedVender}`
+        `${url}/sales/vender/${selectedVender}`
       )
       .then((res) => {
         const data = res.data.sales ?? [];

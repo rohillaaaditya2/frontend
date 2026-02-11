@@ -14,7 +14,7 @@ function EditCustomerProfile({ user, onClose, onUpdate }) {
   useEffect(() => {
     axios
       .get(
-        `https://server-app-xite.onrender.com/customer/getcustomerdetails/${user.Cid}`
+       `${url}/customer/getcustomerdetails/${user.Cid}`
       )
       .then((res) => {
         setFormData(res.data);
@@ -27,7 +27,7 @@ function EditCustomerProfile({ user, onClose, onUpdate }) {
         if (res.data.StId) {
           axios
             .get(
-              `https://server-app-xite.onrender.com/city/showcitybystate/${res.data.StId}`
+              `${url}/city/showcitybystate/${res.data.StId}`
             )
             .then((ctRes) => setCtList(ctRes.data));
         }
@@ -35,7 +35,7 @@ function EditCustomerProfile({ user, onClose, onUpdate }) {
       .catch((err) => console.error(err));
 
     axios
-      .get("https://server-app-xite.onrender.com/state/show/")
+      .get(`${url}/state/show/`)
       .then((res) => setStList(res.data))
       .catch((err) => console.error(err));
   }, [user.Cid]);
@@ -52,7 +52,7 @@ function EditCustomerProfile({ user, onClose, onUpdate }) {
 
     axios
       .get(
-        `https://server-app-xite.onrender.com/city/showcitybystate/${stid}`
+        `${url}/city/showcitybystate/${stid}`
       )
       .then((res) => setCtList(res.data))
       .catch((err) => console.error(err));
@@ -101,7 +101,7 @@ function EditCustomerProfile({ user, onClose, onUpdate }) {
       }
 
       const res = await axios.put(
-        `https://server-app-xite.onrender.com/customer/update/${user.Cid}`,
+        `${url}/customer/update/${user.Cid}`,
         form,
         {
           headers: {

@@ -19,12 +19,12 @@ function ProductList(props) {
         setCId(props.data);
 
         axios
-            .get("https://server-app-xite.onrender.com/product/showproduct")
+            .get(`${url}/product/showproduct`)
             .then((res) => setPList(res.data))
             .catch((err) => alert(err));
 
         axios
-            .get("https://server-app-xite.onrender.com/productcatg/showproductcatg")
+            .get(`${url}/productcatg/showproductcatg`)
             .then((res) => setPCatgList(res.data))
             .catch((err) => alert(err));
 
@@ -48,7 +48,7 @@ function ProductList(props) {
         }
 
         axios
-            .get(`https://server-app-xite.onrender.com/product/showproduct/${pid}`)
+            .get(`${url}/product/showproduct/${pid}`)
             .then((res) => {
                 if (res.data.status === "Active") {
                     const selected = plist.find((item) => item.pid === pid);
@@ -141,8 +141,8 @@ function ProductList(props) {
 
         const url =
             catgId > 0
-                ? `https://server-app-xite.onrender.com/product/showproductbycatgid/${catgId}`
-                : "https://server-app-xite.onrender.com/product/showproduct";
+                ? `${url}/product/showproductbycatgid/${catgId}`
+                :`${url}/product/showproduct`;
 
         axios
             .get(url)

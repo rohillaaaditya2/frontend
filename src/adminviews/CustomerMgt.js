@@ -16,6 +16,8 @@ function CustomerMgt() {
   const [previewImage, setPreviewImage] = useState(null);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
+  const url=process.env.REACT_APP_API_URL;
+
   const [confirmDialog, setConfirmDialog] = useState({
     open: false,
     cid: null,
@@ -25,12 +27,12 @@ function CustomerMgt() {
 
   useEffect(() => {
     axios
-      .get("https://server-app-xite.onrender.com/customer/getcustomercount")
+      .get(`${url}/customer/getcustomercount`)
       .then((res) => setCustomerList(res.data))
       .catch((err) => console.error(err));
 
     axios
-      .get("https://server-app-xite.onrender.com/state/show")
+      .get(`${url}/state/show`)
       .then((res) => setStates(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -38,7 +40,7 @@ function CustomerMgt() {
   const handleViewProfile = (cid) => {
     axios
       .get(
-        `https://server-app-xite.onrender.com/customer/getcustomerdetails/${cid}`
+        `${url}/customer/getcustomerdetails/${cid}`
       )
       .then((res) => {
         setSelectedCustomer(res.data);
@@ -56,7 +58,7 @@ function CustomerMgt() {
   const fetchCitiesByState = (stid) => {
     axios
       .get(
-        `https://server-app-xite.onrender.com/city/showcitybystate/${stid}`
+        `${url}/city/showcitybystate/${stid}`
       )
       .then((res) => setCities(res.data))
       .catch((err) => console.error(err));
@@ -101,7 +103,7 @@ function CustomerMgt() {
       setLoading(true);
 
       const res = await axios.put(
-        `https://server-app-xite.onrender.com/customer/update/${selectedCustomer.Cid}`,
+        `${url}/customer/update/${selectedCustomer.Cid}`,
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -139,7 +141,7 @@ function CustomerMgt() {
 
     axios
       .put(
-        `https://server-app-xite.onrender.com/customer/customermanage/${cid}/${newStatus}`
+        `${url}/customer/customermanage/${cid}/${newStatus}`
       )
       .catch((err) => console.error(err));
 

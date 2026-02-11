@@ -13,14 +13,16 @@ function ShowBills() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const billsPerPage = 3;
+  const url=process.env.REACT_APP_API_URL;
+
 
   useEffect(() => {
     axios
-      .get("https://server-app-xite.onrender.com/customer/getcustomerlist")
+      .get(`${url}/customer/getcustomerlist`)
       .then((res) => setCustList(res.data));
 
     axios
-      .get("https://server-app-xite.onrender.com/product/showproduct")
+      .get(`${url}/product/showproduct`)
       .then((res) => setPList(res.data))
       .catch((err) => alert(err));
   }, []);
@@ -31,7 +33,7 @@ function ShowBills() {
 
     axios
       .get(
-        `https://server-app-xite.onrender.com/bill/billshow/${cid}`
+        `${url}/bill/billshow/${cid}`
       )
       .then((res) => {
         const bills = res.data;

@@ -13,6 +13,7 @@
         const [ctlist,setCtList]=useState([]);
         const [stlist,setStList]=useState([]);
         let statename="";
+        const url=process.env.REACT_APP_API_URL;
 
         const handleCtIdText=(evt)=>{
               setCtId(evt.target.value);
@@ -34,14 +35,14 @@
         //  HANDLE PAGE LOAD EVENT OR THIS FUNCTION WILL EXECUTE AUTOMATICALLY AT THE LOADING TIME OF COMPONENTS
 
         useEffect(()=>{
-              axios.get("https://server-app-xite.onrender.com/state/show").then((res)=>{
+              axios.get(`${url}/state/show`).then((res)=>{
                 setStList(res.data);
               }).catch((err)=>{
                 alert(err);
               });
         })
               const handleAddNewButton=()=>{
-                axios.get("https://server-app-xite.onrender.com/city/getall").then((res)=>{
+                axios.get(`${url}/city/getall`).then((res)=>{
                     setCtId(res.data.length+1);
                     setStatus(1);
                 }).catch((err)=>{
@@ -55,7 +56,7 @@
                  return;   
                 }
                 else{
-                    axios.get("https://server-app-xite.onrender.com/city/searchbyname/"+ctname).then((res)=>{
+                    axios.get(`${url}/city/searchbyname/`+ctname).then((res)=>{
                         if(res.data.ctname!=undefined)
                         {
                             alert("CITY NAME ALLREADY EXIST");
@@ -68,7 +69,7 @@
                                 stid:stid,
                                 status:status
                             }
-                            axios.post("https://server-app-xite.onrender.com/city/save/",obj).then((res)=>{
+                            axios.post(`${url}/city/save/`,obj).then((res)=>{
                                 alert(res.data);
                                 setCtId("");
                                 setCtName("");
@@ -85,7 +86,7 @@
                 }
 
                 const handleShowButton=()=>{
-                    axios.get("https://server-app-xite.onrender.com/city/getall/").then((res)=>{
+                    axios.get(`${url}/city/getall/`).then((res)=>{
                         setCtList(res.data);
                     }).catch((err)=>{
                         alert(err);
@@ -95,7 +96,7 @@
                 const handleSearchButton=()=>{
                     if(ctid!=undefined&&ctid!="")
                     {
-                        axios.get("https://server-app-xite.onrender.com/city/search/"+ctid).then((res)=>{
+                        axios.get(`${url}/city/search/`+ctid).then((res)=>{
                             if(res.data.stid!=undefined)
                             {
                                 setCtId(res.data.ctid);
@@ -112,7 +113,7 @@
                     }
                     if(ctname!=undefined&&ctname!="")
                     {
-                      axios.get("https://server-app-xite.onrender.com/city/searchbyname/"+ctname).then((res)=>{
+                      axios.get(`${url}/city/searchbyname/`+ctname).then((res)=>{
                         if(res.data.stid!=undefined)
                         {
                             setCtId(res.data.ctid);
@@ -145,22 +146,25 @@
                             stid:stid,
                             status:status
                         }
-                        axios.put("https://server-app-xite.onrender.com/city/update/",obj).then((res)=>{
-                            alert(res.data);
-                            setCtId("");
-                            setCtName("");
-                            setStId("");
-                            setStatus("");
-                        }).catch((err)=>{
-                            alert(err);
-                        });
+                        axios.put(`${url}/city/update`, {
+                              ctid: ctid,
+                              ctname: ctname,
+                              stid: stid,
+                              status: status
+                            })
+                            .then((res) => {
+                              alert(res.data);
+                            })
+                            .catch((err) => {
+                              alert(err);
+                            });
                     }
                 }
 
                       const handleDeleteButton=()=>{
                         if(ctid!=undefined && ctid!="")
                         {
-                            axios.delete("https://server-app-xite.onrender.com/city/delete/"+ctid).then((res)=>{
+                            axios.delete(`${url}/city/delete/`+ctid).then((res)=>{
                                 alert(res.data);
                             }).catch((err)=>{
                                 alert(err);

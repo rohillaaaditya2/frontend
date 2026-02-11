@@ -16,7 +16,7 @@ export default function ProductListforMainpage({ searchText = "" }) {
   const [showlogin, setShowlogin] = useState(false);
   const [showBill, setShowbill] = useState(false);
 
-  const ProUrl = "https://server-app-xite.onrender.com/product/";
+  const ProUrl = `${url}/product/`;
 
   /* LOAD PRODUCTS */
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function ProductListforMainpage({ searchText = "" }) {
       .then(res => setPlist(res.data.filter(p => p.status === "Active")))
       .catch(() => toast.error("Product load failed"));
 
-    axios.get("https://server-app-xite.onrender.com/productcatg/showproductcatg")
+    axios.get(`${url}/productcatg/showproductcatg`)
       .then(res => setPcgatList(res.data))
       .catch(() => toast.error("Category load failed"));
 
