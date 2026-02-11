@@ -10,6 +10,8 @@ function Product({ data }) {
   const [pprice, setPPrice] = useState("");
   const [oprice, setOPrice] = useState("");
   const [pcatgid, setPCatgId] = useState("");
+  const url = process.env.REACT_APP_API_URL;
+
   const [image, setImage] = useState({ preview: "", data: "" });
 
   const [plist, setPList] = useState([]);
