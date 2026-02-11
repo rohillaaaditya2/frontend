@@ -18,6 +18,7 @@ function OrderTracking({CUserId})
     const [billIds,setBillIds]=useState([]);
     const [billid,setBillid] = useState("");
     const [order,setOrder] = useState(null);
+    const url=process.env.REACT_APP_API_URL;
 
     const cid = CUserId;
 

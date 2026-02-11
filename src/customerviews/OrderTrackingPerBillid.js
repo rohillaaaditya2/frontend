@@ -16,6 +16,7 @@ const STATUS_FLOW = [
 function OrderTrackingPerBillId({BillId})
 {
   const [order,setOrder] = useState(null);
+  const url=process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     if(BillId)

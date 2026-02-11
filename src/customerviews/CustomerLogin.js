@@ -12,7 +12,9 @@ function CustomerLogin ()
      const [upass,setUPass] = useState("");
      const [isChecked,setIsChecked] = useState(false);
      const [errors,setErrors] = useState({});
-     const [authError,setAuthError] = useState("");    // NEW STATE FOR AUTH ERRORS
+     const [authError,setAuthError] = useState(""); 
+        // NEW STATE FOR AUTH ERRORS
+        const url=process.env.REACT_APP_API_URL;
 
      // FORGET PASSWORD STATES
 

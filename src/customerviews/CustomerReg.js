@@ -20,6 +20,7 @@
       const[slist,setSList] =useState([]);
       const[ctlist,setCtList] =useState([]);
       const[errors,setErrors] =useState({});
+      const url=process.env.REACT_APP_API_URL;
      
 
         useEffect(() =>{

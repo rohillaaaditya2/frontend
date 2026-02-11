@@ -14,6 +14,7 @@ function ProductList(props) {
     const [pcatglist, setPCatgList] = useState([]);
     const [showLogin, setShowLogin] = useState(false);
     const [showBill, setShowBill] = useState(false);
+    const url=process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         setCId(props.data);

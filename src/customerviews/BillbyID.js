@@ -14,6 +14,7 @@ function BillByID(props) {
   const [billdate, setBillDate] = useState("");
   const [loading, setLoading] = useState(true);
   const [isshowordertracking, setIsShowOrderTracking] = useState(false);
+  const url=process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     setLoading(true);

@@ -22,6 +22,7 @@ function CustomerHome() {
   const [user, setUser] = useState(null);
   const [activeView, setActiveView] = useState("dashboard");
   const [isLoading, setIsLoading] = useState(false);
+  const url=process.env.REACT_APP_API_URL;
 
   /* ===== LOAD USER SESSION ===== */
   useEffect(() => {

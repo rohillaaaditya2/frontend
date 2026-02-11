@@ -15,6 +15,7 @@ export default function ProductListforMainpage({ searchText = "" }) {
   const [plist, setPlist] = useState([]);
   const [showlogin, setShowlogin] = useState(false);
   const [showBill, setShowbill] = useState(false);
+  const url=process.env.REACT_APP_API_URL;
 
   const ProUrl = `${url}/product/`;
 

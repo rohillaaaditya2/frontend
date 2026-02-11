@@ -14,6 +14,7 @@ import React,{useState,useEffect,useCallback} from "react";
     const [isPaymentDone,setIsPaymentDone] = useState(false);
     const[billId,setBillId] =useState("");
     const[isProcessing,setIsProcessing]=useState(false);
+    const url=process.env.REACT_APP_API_URL;
 
     const getCurrentDate = () => {
         const d =new Date();

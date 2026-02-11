@@ -9,6 +9,7 @@ function EditCustomerProfile({ user, onClose, onUpdate }) {
   const [newImage, setnewImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [errors, setErrors] = useState({});
+  const url=process.env.REACT_APP_API_URL;
 
   // LOAD CUSTOMER
   useEffect(() => {

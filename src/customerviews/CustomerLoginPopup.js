@@ -12,6 +12,8 @@
              const [isChecked,setIsChecked] = useState(false);
              const [loading,setLoading] = useState(false);
              const [authError,setAuthError] = useState("");
+             const url=process.env.REACT_APP_API_URL;
+
 
              useEffect(() => {
                 const myCookies = Cookies.get("auth");
