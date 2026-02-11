@@ -4,7 +4,7 @@ import "./Product.css";
 
 function Product({ data }) {
   const venderid = data;
-  const url=process.env.REACT_APP_API_URL;
+
   const [pid, setPId] = useState("");
   const [pname, setPName] = useState("");
   const [pprice, setPPrice] = useState("");
