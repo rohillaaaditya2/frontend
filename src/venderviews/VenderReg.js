@@ -15,6 +15,7 @@ function VenderReg() {
   const [errors, setErrors] = useState({});
   const [venderList, setVenderList] = useState([]);
 
+  // FIXED: url variable added
   const url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
@@ -27,7 +28,7 @@ function VenderReg() {
       setVenderList(res.data);
       setVId(res.data.length + 1);
     } catch (err) {
-      alert(err);
+      alert("Error fetching vendor list");
     }
   };
 
@@ -48,8 +49,8 @@ function VenderReg() {
       valid = false;
     }
 
-    if (!vendername.match(/^[A-Za-z ]+$/)) {
-      temp.vendername = "VENDER NAME MUST CONTAIN ONLY LETTERS";
+    if (!vendername || !vendername.match(/^[A-Za-z ]+$/)) {
+      temp.vendername = "VENDOR NAME MUST CONTAIN ONLY LETTERS";
       valid = false;
     }
 
@@ -101,6 +102,16 @@ function VenderReg() {
 
       alert(res.data.message || "Registration successful");
       setStatus("Registration successful");
+
+      // reset form
+      setVUserId("");
+      setVUserPass("");
+      setVenderName("");
+      setVAddress("");
+      setVContact("");
+      setVEmail("");
+      setImage({ preview: "", data: null });
+
       fetchVendorList();
     } catch (err) {
       console.error(err);
@@ -123,11 +134,11 @@ function VenderReg() {
     <div className="vendContainer_guru">
       <center>
         <div className="vendBox_guru">
-          <h2 className="vendHeading_guru">VENDER REGISTRATION</h2>
+          <h2 className="vendHeading_guru">VENDOR REGISTRATION</h2>
           <p className="vendStatus_guru">{status}</p>
 
           <div className="vendRow_guru">
-            <label className="vendLabel_guru">VENDER ID</label>
+            <label className="vendLabel_guru">VENDOR ID</label>
             <span className="vendReadonly_guru">{vid}</span>
           </div>
 
@@ -135,6 +146,7 @@ function VenderReg() {
             <label className="vendLabel_guru">USER ID</label>
             <input
               type="text"
+              value={vuserid}
               onChange={(e) => setVUserId(e.target.value)}
               className="vendInput_guru"
             />
@@ -145,6 +157,7 @@ function VenderReg() {
             <label className="vendLabel_guru">PASSWORD</label>
             <input
               type="password"
+              value={vuserpass}
               onChange={(e) => setVUserPass(e.target.value)}
               className="vendInput_guru"
             />
@@ -152,9 +165,10 @@ function VenderReg() {
           </div>
 
           <div className="vendRow_guru">
-            <label className="vendLabel_guru">VENDER NAME</label>
+            <label className="vendLabel_guru">VENDOR NAME</label>
             <input
               type="text"
+              value={vendername}
               onChange={(e) => setVenderName(e.target.value)}
               className="vendInput_guru"
             />
@@ -165,6 +179,7 @@ function VenderReg() {
             <label className="vendLabel_guru">ADDRESS</label>
             <input
               type="text"
+              value={vaddress}
               onChange={(e) => setVAddress(e.target.value)}
               className="vendInput_guru"
             />
@@ -175,6 +190,7 @@ function VenderReg() {
             <label className="vendLabel_guru">CONTACT</label>
             <input
               type="number"
+              value={vcontact}
               onChange={(e) => setVContact(e.target.value)}
               className="vendInput_guru"
             />
@@ -185,6 +201,7 @@ function VenderReg() {
             <label className="vendLabel_guru">EMAIL</label>
             <input
               type="email"
+              value={vemail}
               onChange={(e) => setVEmail(e.target.value)}
               className="vendInput_guru"
             />
